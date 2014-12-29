@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int[]\ getDiceNumber()
+comment1.params=number
+comment1.target=void\ setDiceNumber(int[])
+comment2.params=ply
+comment2.target=void\ attach(Observer)
+comment3.params=ply
+comment3.target=void\ detach(Observer)
+comment4.params=
+comment4.target=void\ notifyPlayers()
+comment5.params=
+comment5.target=void\ showDiceNumber()
+numComments=6

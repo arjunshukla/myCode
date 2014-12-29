@@ -1,0 +1,526 @@
+//
+//  OGSReportsViewController.m
+//  OilAndGasSolution
+//
+//  Created by Arjun on 26/08/13.
+
+
+#import "OGSReportsViewController.h"
+#import "OGSBarChart.h"
+#import "OGSGraphData.h"
+#import "OGSGraphConstants.h"
+
+@interface OGSReportsViewController () {
+    
+}
+
+@property (nonatomic, strong) CPTBarPlot *aaplPlot;
+@property (nonatomic, strong) CPTBarPlot *googPlot;
+@property (nonatomic, strong) CPTBarPlot *msftPlot;
+@property (nonatomic, strong) CPTPieChart *pieChart;
+@property (nonatomic, strong) CPTPlotSpaceAnnotation *priceAnnotation;
+
+
+@end
+
+@implementation OGSReportsViewController
+
+@synthesize viewPieChart,hostView,selectedTheme,responseDictionary,arrSector;
+@synthesize graphView;
+
+CGFloat const graphWidth = 0.25f;
+CGFloat const graphInitialX = 0.25f;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
+// charting code
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    isBar = NO;
+    isPie = NO;
+    counter = 0;
+	// Do any additional setup after loading the view, typically from a nib.
+    // JASON code
+    //    NSBundle *bundle = [NSBundle mainBundle];
+    //    NSString *filePath = [[NSString alloc]init];
+    //    filePath = [bundle pathForResource:@"data" ofType:@"json"];
+    //    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    //    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+    //    NSData *data1 = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    //    NSError *error = nil;
+    //    responseDictionary = [NSDictionary dictionaryWithDictionary:[NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error]];
+    //    NSLog(@"Response DIC is : %@",responseDictionary);
+    
+    //    NSString *week = [[NSString alloc]init];
+    //    NSString *attendance = [[NSString alloc]init];
+    arrSector = [[NSArray alloc]initWithObjects:@"Oil",@"Gas",@"LPG",@"CNG",@"Petroleum", nil];
+    //    arrSector = [[NSArray alloc]initWithArray:[responseDictionary objectForKey:@"myresponse"]];
+    
+    //    int flag = 0;
+    //    for(int i=0;i<[arr count];i++)
+    //    {
+    //        if([self.txtName.text isEqualToString:[[arr objectAtIndex:i]valueForKey:@"name "]])
+    //        {
+    //            flag = 1;
+    //            for(int j=0;j<[[[arr objectAtIndex:i]valueForKey:@"friendDetails"] count];j++)
+    //            {
+    //                if([self.txtRelationId.text isEqual:[[[[arr objectAtIndex:i]valueForKey:@"friendDetails"]objectAtIndex:j]valueForKey:@"relation"]])
+    //                {
+    //                    flag = 1;
+    //                    //                int j = 0;
+    //                    NSString *strname = [[NSString alloc]init];
+    //                    strname = [[[[[responseDictionary valueForKey:@"myresponse"]objectAtIndex:i]valueForKey:@"friendDetails"]objectAtIndex:j]valueForKey:@"name "];
+    //                    [self.lblRelation setText:[NSString stringWithFormat:@"Your Friend with relationID %@ is %@",self.txtRelationId.text,strname]];
+    //                }
+    //            }
+    //        }
+    //    }
+    
+    //    [self initPlot];
+}
+
+
+- (IBAction)btnPieChart:(id)sender
+{
+    if(counter == 0)
+    {
+        //    [viewPieChart removeFromSuperview];
+        //    UIImage *image = [UIImage imageNamed:@"bar.png"];
+        //    [self.imgGraphView setImage:image];
+        isPie = YES;
+        isBar = NO;
+        [self initPlot];
+        [self.graphView setHidden:YES];
+        counter = 1;
+    }
+}
+
+- (IBAction)btnBarChart:(id)sender
+{
+    [self.graphView setHidden:NO];
+    isBar = YES;
+    isPie = NO;
+    //    OGSBarChart *obj = [[OGSBarChart alloc]init];
+    //    obj.graphView = self.graphView;
+    //    [obj initPlot];
+    //    [self.view addSubview:obj.graphView];
+    [self initPlot];
+    
+    [self.hostView removeFromSuperview];
+    counter = 0;
+    
+}
+
+- (IBAction)btnPlotGraph:(id)sender
+{
+    
+}
+
+
+#pragma mark - CPTPlotDataSource methods
+-(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
+    //    return [[[CPDStockPriceStore sharedInstance] tickerSymbols] count];
+    if (isPie == YES) {
+        return [arrSector count];
+    }
+    else {
+        return [[[OGSGraphData sharedInstance] datesInWeek] count];
+    }
+    
+    //    return 0;
+    
+    
+}
+
+-(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index {
+    //    if (isPie == YES) {
+    //
+    //        if (CPTPieChartFieldSliceWidth == fieldEnum)
+    //        {
+    //            //        return [[[CPDStockPriceStore sharedInstance] dailyPortfolioPrices] objectAtIndex:index];
+    //            return [arrSector objectAtIndex:1];
+    //        }
+    //        return [NSDecimalNumber zero];
+    //    }
+    //
+    //    else {
+    if ((fieldEnum == CPTBarPlotFieldBarTip) && (index < [[[OGSGraphData sharedInstance] datesInWeek] count])) {
+        if ([plot.identifier isEqual:CPDTickerSymbolAAPL]) {
+            return [[[OGSGraphData sharedInstance] weeklyPrices:CPDTickerSymbolAAPL] objectAtIndex:index];
+        } else if ([plot.identifier isEqual:CPDTickerSymbolGOOG]) {
+            return [[[OGSGraphData sharedInstance] weeklyPrices:CPDTickerSymbolGOOG] objectAtIndex:index];
+        } else if ([plot.identifier isEqual:CPDTickerSymbolMSFT]) {
+            return [[[OGSGraphData sharedInstance] weeklyPrices:CPDTickerSymbolMSFT] objectAtIndex:index];
+        }
+    }
+    return [NSDecimalNumber numberWithUnsignedInteger:index];
+    //    }
+}
+
+-(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index {
+    // 1 - Define label text style
+    static CPTMutableTextStyle *labelText = nil;
+    if (!labelText)
+    {
+        labelText= [[CPTMutableTextStyle alloc] init];
+        labelText.color = [CPTColor whiteColor];
+    }
+    // 2 - Calculate portfolio total value
+    //    NSDecimalNumber *totalAttendance = [NSDecimalNumber zero];
+    ////    NSDecimalNumber *portfolioSum = [NSDecimalNumber zero];
+    ////    for (NSDecimalNumber *price in [[CPDStockPriceStore sharedInstance] dailyPortfolioPrices]) {
+    ////        portfolioSum = [portfolioSum decimalNumberByAdding:price];
+    ////    }
+    //    // 3 - Calculate percentage value
+    //    NSDecimalNumber *price = [[[CPDStockPriceStore sharedInstance] dailyPortfolioPrices] objectAtIndex:index];
+    //    NSDecimalNumber *percent = [price decimalNumberByDividingBy:portfolioSum];
+    // 4 - Set up display label
+    //    NSString *labelValue = [NSString stringWithFormat:@"$%0.2f USD (%0.1f %%)", [price floatValue], ([percent floatValue] * 100.0f)];
+    NSString *labelValue = [[NSString alloc]init];
+    if (isPie == YES) {
+        labelValue = [arrSector objectAtIndex:index];
+    }
+    // 5 - Create and return layer with label text
+    return [[CPTTextLayer alloc] initWithText:labelValue style:labelText];
+}
+
+-(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index {
+    return @"Hello ";
+}
+
+#pragma mark - UIActionSheetDelegate methods
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+}
+
+#pragma mark - Chart behavior
+-(void)initPlot {
+    if (isPie == YES) {
+        [self configureHost];
+        [self configureGraph];
+        [self configureChart];
+        [self configureLegend];
+    }
+    if (isBar) {
+        self.graphView.allowPinchScaling = YES;
+        [self configureGraph];
+        [self configurePlots];
+        [self configureAxes];
+    }
+}
+
+-(void)configureHost
+{
+    // 1 - Set up view frame
+    CGRect parentRect = viewPieChart.bounds;
+    //    parentRect = CGRectMake(parentRect.origin.x,
+    //                            (parentRect.origin.y),
+    //                            parentRect.size.width,
+    //                            (parentRect.size.height));
+    parentRect = CGRectMake(150, 188, 500, 400);
+    // 2 - Create host view
+    self.hostView = [(CPTGraphHostingView *) [CPTGraphHostingView alloc] initWithFrame:parentRect];
+    self.hostView.allowPinchScaling = YES;
+    self.viewPieChart.hidden = NO;
+    [self.view addSubview:self.hostView];
+    
+    
+    
+    //    [self.view addSubview:viewPieChart];
+    
+    
+    
+    //    viewPieChart = [[UIView alloc] initWithFrame:CGRectMake(62,0, 417, 300)];
+    //    viewPieChart.backgroundColor = [UIColor blueColor];
+    //    CGRect parentRect = viewPieChart.bounds;
+    //    parentRect = CGRectMake(62,0,viewPieChart.bounds.size.width,viewPieChart.bounds.size.height);
+    //    viewPieChart	 = [(CPTGraphHostingView *) [CPTGraphHostingView alloc] initWithFrame:parentRect];
+    ////    self.viewPieChart.allowPinchScaling = NO;
+    //    [self.view addSubview:viewPieChart];
+    //    viewPieChart.hidden = FALSE;
+    //    self.view.userInteractionEnabled = YES;
+    //    CGRect parentRect = self.view.bounds;
+    //    parentRect = CGRectMake(100, 100, self.viewPieChart.bounds.size.width, self.viewPieChart.bounds.size.height);
+    //    // 2 - Create host view
+    //    self.viewPieChart = [(CPTGraphHostingView *) [CPTGraphHostingView alloc] initWithFrame:parentRect];
+    ////    self.viewPieChart.allowPinchScaling = NO;
+    //    [self.view addSubview:viewPieChart];
+    //    self.view = viewPieChart;
+}
+
+-(void)configureGraph
+{
+    if (isPie == YES) {
+        CPTGraph *graph = [[CPTXYGraph alloc] initWithFrame:viewPieChart.bounds];
+        self.hostView.hostedGraph = graph;
+        graph.paddingLeft = 0.0f;
+        graph.paddingTop = 0.0f;
+        graph.paddingRight = 0.0f;
+        graph.paddingBottom = 0.0f;
+        graph.axisSet = nil;
+        // 2 - Set up text style
+        CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
+        textStyle.color = [CPTColor whiteColor];
+        textStyle.fontName = @"Helvetica-Bold";
+        textStyle.fontSize = 18.0f;
+        // 3 - Configure title
+        NSString *title = @"Sample Pie Chart";
+        graph.title = title;
+        graph.titleTextStyle = textStyle;
+        graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
+        graph.titleDisplacement = CGPointMake(0.0f, -12.0f);
+        // 4 - Set theme
+        //    self.selectedTheme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
+        self.selectedTheme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
+        //    self.selectedTheme = [CPTTheme themeNamed:kCPTPlainBlackTheme];
+        //    self.selectedTheme = [CPTTheme themeNamed:kCPTSlateTheme];
+        //    self.selectedTheme = [CPTTheme themeNamed:kCPTStocksTheme];
+        [graph applyTheme:self.selectedTheme];
+    }
+    
+    if (isBar == YES) {
+        // 1 - Create the graph
+        CPTGraph *graph = [[CPTXYGraph alloc] initWithFrame:self.graphView.bounds];
+        graph.plotAreaFrame.masksToBorder = NO;
+        self.graphView.hostedGraph = graph;
+        [graph.plotAreaFrame.plotArea updateAxisSetLayersForType:CPTGraphLayerTypeMinorGridLines];
+        
+        // 2 - Configure the graph
+        [graph applyTheme:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
+        graph.paddingBottom = 30.0f;
+        graph.paddingLeft  = 45.0f;
+        graph.paddingTop    = 5.0f;
+        graph.paddingRight  = 10.0f;
+        
+        // 3 - Set up styles
+        CPTMutableTextStyle *titleStyle = [CPTMutableTextStyle textStyle];
+        titleStyle.color = [CPTColor whiteColor];
+        titleStyle.fontName = @"Helvetica-Bold";
+        titleStyle.fontSize = 15.0f;
+        
+        // 4 - Set up title
+        NSString *title = @"Portfolio Prices: April 23 - 27, 2012";
+        graph.title = title;
+        graph.titleTextStyle = titleStyle;
+        graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
+        graph.titleDisplacement = CGPointMake(0.0f, -16.0f);
+        
+        // 5 - Set up plot space
+        CGFloat xMin = 0.0f;
+        CGFloat xMax = 5;//[[[OGSGraphData sharedInstance] datesInWeek] count];
+        CGFloat yMin = 10.0f;
+        CGFloat yMax = 700.0f;  // should determine dynamically based on max price
+        CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+        plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat(xMax)];
+        plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(yMin) length:CPTDecimalFromFloat(yMax)];
+    }
+}
+
+-(void)configureChart
+{
+    // 1 - Get reference to graph
+    CPTGraph *graph = self.hostView.hostedGraph;
+    
+    // 2 - Create chart
+    self.pieChart = [[CPTPieChart alloc] init];
+    self.pieChart.dataSource = self;//[arrSector objectAtIndex:1];
+    self.pieChart.delegate = self;
+    self.pieChart.pieRadius = (self.hostView.bounds.size.height * 0.7) / 2;
+    //    self.pieChart.pieRadius = (self.viewPieChart.bounds.size.height * 0.7)/2;
+    self.pieChart.identifier = graph.title;
+    self.pieChart.startAngle = M_PI_4;
+    self.pieChart.sliceDirection = CPTPieDirectionClockwise;
+    // 3 - Create gradient
+    CPTGradient *overlayGradient = [[CPTGradient alloc] init];
+    overlayGradient.gradientType = CPTGradientTypeRadial;
+    overlayGradient = [overlayGradient addColorStop:[[CPTColor whiteColor] colorWithAlphaComponent:0.0] atPosition:0.9];
+    overlayGradient = [overlayGradient addColorStop:[[CPTColor whiteColor] colorWithAlphaComponent:0.4] atPosition:1.0];
+    self.pieChart.overlayFill = [CPTFill fillWithGradient:overlayGradient];
+    // 4 - Add chart to graph
+    [graph addPlot:self.pieChart];
+    [self animateGraph];
+}
+
+-(void)configureLegend
+{
+    
+}
+
+-(void)configurePlots {
+    // 1 - Set up the three plots
+    self.aaplPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor redColor] horizontalBars:NO];
+    self.aaplPlot.identifier = CPDTickerSymbolAAPL;
+    self.googPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor greenColor] horizontalBars:NO];
+    self.googPlot.identifier = CPDTickerSymbolGOOG;
+    self.msftPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor blueColor] horizontalBars:NO];
+    self.msftPlot.identifier = CPDTickerSymbolMSFT;
+    
+    // 2 - Set up line style
+    CPTMutableLineStyle *barLineStyle = [[CPTMutableLineStyle alloc] init];
+    barLineStyle.lineColor = [CPTColor lightGrayColor];
+    barLineStyle.lineWidth = 0.5;
+    
+    // 3 - Add plots to graph
+    CPTGraph *graph = self.graphView.hostedGraph;
+    CGFloat barX = graphInitialX;
+    NSArray *plots = [NSArray arrayWithObjects:self.aaplPlot, self.googPlot, self.msftPlot, nil];
+    for (CPTBarPlot *plot in plots) {
+        plot.dataSource = self;
+        plot.delegate = self;
+        plot.barWidth = CPTDecimalFromDouble(graphWidth);
+        plot.barOffset = CPTDecimalFromDouble(barX);
+        plot.lineStyle = barLineStyle;
+        [graph addPlot:plot toPlotSpace:graph.defaultPlotSpace];
+        barX += graphWidth;
+    }
+    [self animateGraph];
+}
+-(void)configureAxes {
+    // 1 - Configure styles
+    CPTMutableTextStyle *axisTitleStyle = [CPTMutableTextStyle textStyle];
+    axisTitleStyle.color = [CPTColor whiteColor];
+    axisTitleStyle.fontName = @"Helvetica-Bold";
+    axisTitleStyle.fontSize = 12.0f;
+    CPTMutableLineStyle *axisLineStyle = [CPTMutableLineStyle lineStyle];
+    axisLineStyle.lineWidth = 2.0f;
+    axisLineStyle.lineColor = [[CPTColor whiteColor] colorWithAlphaComponent:1];
+    
+    // 2 - Get the graph's axis set
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *) self.graphView.hostedGraph.axisSet;
+    
+    // 3 - Configure the x-axis
+    axisSet.xAxis.labelingPolicy = CPTAxisLabelingPolicyEqualDivisions;
+    axisSet.xAxis.title = @"Days of Week (Mon - Fri)";
+    axisSet.xAxis.titleTextStyle = axisTitleStyle;
+    axisSet.xAxis.titleOffset = 5.0f;
+    axisSet.xAxis.axisLineStyle = axisLineStyle;
+    
+    // 4 - Configure the y-axis
+    axisSet.yAxis.labelingPolicy = CPTAxisLabelingPolicyAutomatic;
+    axisSet.yAxis.title = @"Price";
+    axisSet.yAxis.titleTextStyle = axisTitleStyle;
+    //    axisSet.yAxis.la
+    axisSet.yAxis.labelAlignment = CPTAlignmentCenter;
+    axisSet.yAxis.titleOffset = 5.0f;
+    axisSet.yAxis.axisLineStyle = axisLineStyle;
+    
+    [axisSet.xAxis updateMajorTickLabels];
+}
+
+-(void)animateGraph {
+    if(isPie)
+    {
+        
+        self.hostView.alpha = 0.0;
+        
+        [UIView animateWithDuration:1.0 animations:^
+         {
+             self.hostView.alpha = 0.8;
+         }];
+
+    }
+    else
+    {        
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+        [anim setDuration:1.0f];
+        anim.toValue = [NSNumber numberWithFloat:1];
+        anim.fromValue = [NSNumber numberWithFloat:0.0f];
+        anim.removedOnCompletion = NO;
+        anim.delegate = self;
+        anim.fillMode = kCAFillModeForwards;
+        
+        self.aaplPlot.anchorPoint = CGPointMake(0.0, 0.0);
+        [self.aaplPlot addAnimation:anim forKey:@"grow"];
+        
+        self.googPlot.anchorPoint = CGPointMake(0.0, 0.0);
+        [self.googPlot addAnimation:anim forKey:@"grow"];
+        
+        self.msftPlot.anchorPoint = CGPointMake(0.0, 0.0);
+        [self.msftPlot addAnimation:anim forKey:@"grow"];
+        
+        self.pieChart.anchorPoint = CGPointMake(0.0, 0.0);
+        [self.pieChart addAnimation:anim forKey:@"grow"];
+    }
+}
+
+#pragma mark - CPTBarPlotDelegate methods
+-(void)barPlot:(CPTBarPlot *)plot barWasSelectedAtRecordIndex:(NSUInteger)index {
+    // 1 - Is the plot hidden?
+    if (plot.isHidden == YES) {
+        return;
+    }
+    
+    // 2 - Create style, if necessary
+    static CPTMutableTextStyle *style = nil;
+    if (!style) {
+        style = [CPTMutableTextStyle textStyle];
+        style.color= [CPTColor yellowColor];
+        style.fontSize = 16.0f;
+        style.fontName = @"Helvetica-Bold";
+    }
+    
+    // 3 - Create annotation, if necessary
+    NSNumber *price = [self numberForPlot:plot field:CPTBarPlotFieldBarTip recordIndex:index];
+    if (!self.priceAnnotation) {
+        NSNumber *x = [NSNumber numberWithInt:0];
+        NSNumber *y = [NSNumber numberWithInt:0];
+        NSArray *anchorPoint = [NSArray arrayWithObjects:x, y, nil];
+        self.priceAnnotation = [[CPTPlotSpaceAnnotation alloc] initWithPlotSpace:plot.plotSpace anchorPlotPoint:anchorPoint];
+    }
+    
+    // 4 - Create number formatter, if needed
+    static NSNumberFormatter *formatter = nil;
+    if (!formatter) {
+        formatter = [[NSNumberFormatter alloc] init];
+        [formatter setMaximumFractionDigits:2];
+    }
+    
+    // 5 - Create text layer for annotation
+    NSString *priceValue = [formatter stringFromNumber:price];
+    CPTTextLayer *textLayer = [[CPTTextLayer alloc] initWithText:priceValue style:style];
+    self.priceAnnotation.contentLayer = textLayer;
+    
+    // 6 - Get plot index based on identifier
+    NSInteger plotIndex = 0;
+    if ([plot.identifier isEqual:CPDTickerSymbolAAPL] == YES) {
+        plotIndex = 0;
+    } else if ([plot.identifier isEqual:CPDTickerSymbolGOOG] == YES) {
+        plotIndex = 1;
+    } else if ([plot.identifier isEqual:CPDTickerSymbolMSFT] == YES) {
+        plotIndex = 2;
+    }
+    
+    // 7 - Get the anchor point for annotation
+    CGFloat x = index + graphInitialX + (plotIndex * graphWidth);
+    NSNumber *anchorX = [NSNumber numberWithFloat:x];
+    CGFloat y = [price floatValue] + 40.0f;
+    NSNumber *anchorY = [NSNumber numberWithFloat:y];
+    self.priceAnnotation.anchorPlotPoint = [NSArray arrayWithObjects:anchorX, anchorY, nil];
+    
+    // 8 - Add the annotation
+    [plot.graph.plotAreaFrame.plotArea addAnnotation:self.priceAnnotation];
+}
+
+
+
+// end of charting code
+
+@end

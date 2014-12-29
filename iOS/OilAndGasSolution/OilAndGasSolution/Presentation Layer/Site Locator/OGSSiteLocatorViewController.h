@@ -1,0 +1,27 @@
+//
+//  OGSSiteLocatorViewController.h
+//  OilAndGasSolution
+
+
+
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
+@interface OGSSiteLocatorViewController : UIViewController <MKMapViewDelegate,UISearchBarDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *locationList;
+@property (strong, nonatomic) IBOutlet MKMapView *locationMapView;
+@property (strong, nonatomic) IBOutlet UIView *siteDetails;
+@property (strong, nonatomic) IBOutlet UIView *shareView;
+@property (strong, nonatomic) IBOutlet UISearchBar *sitesSearchBar;
+@property (strong, nonatomic) IBOutlet UIView *filterByPlaceView;
+- (IBAction)selectContinent:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *selectedFilter;
+@property (strong, nonatomic) IBOutlet UIButton *unfilterBtn;
+@property (strong, nonatomic) IBOutlet UITableView *siteDetailsTable;
+- (IBAction)worldSelected:(id)sender;
+
+- (IBAction)facebookShare:(id)sender;
+- (IBAction)twitterShare:(id)sender;
+- (IBAction)mailShare:(id)sender;
+@end

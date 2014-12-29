@@ -1,0 +1,18 @@
+//
+//  OGSGraphConstants.m
+//  OilAndGasSolution
+//
+//  Created by Arjun on 29/08/13.
+//  Copyright (c) 2013 Infosys Limited. All rights reserved.
+//
+
+#import "OGSGraphConstants.h"
+
+@implementation OGSGraphConstants
+
+NSString * const CPDTickerSymbolAAPL = @"AAPLE";
+NSString * const CPDTickerSymbolGOOG = @"GOOGLE";
+NSString * const CPDTickerSymbolMSFT = @"MICROSOFT";
+NSString * const CPDTickerSymbolNOBL = @"NOBLE";
+
+@end

@@ -1,0 +1,929 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		265B6A3E17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265B6A3C17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.m */; };
+		265B6A3F17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265B6A3D17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.xib */; };
+		265B6A5217CB902C00BB8DDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265B6A4E17CB900800BB8DDF /* MapKit.framework */; };
+		265B6A5317CB903300BB8DDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265B6A5017CB901000BB8DDF /* CoreLocation.framework */; };
+		265C7AB317CF493D00859ADE /* OGSRiskVIewIncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C7AB117CF493D00859ADE /* OGSRiskVIewIncidentViewController.m */; };
+		265C7AB417CF493D00859ADE /* OGSRiskVIewIncidentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265C7AB217CF493D00859ADE /* OGSRiskVIewIncidentViewController.xib */; };
+		265C7AC217CF89FE00859ADE /* emergency_exit_route - Mar12_.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 265C7ABE17CF89FE00859ADE /* emergency_exit_route - Mar12_.jpg */; };
+		265C7AC417CF89FE00859ADE /* EscapeRoute.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 265C7AC017CF89FE00859ADE /* EscapeRoute.jpg */; };
+		265C7AC517CF89FE00859ADE /* image6671.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 265C7AC117CF89FE00859ADE /* image6671.jpg */; };
+		265C7ACA17D05D1E00859ADE /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 265C7AC917D05D1E00859ADE /* images.jpg */; };
+		C00D850517D48BFA00BFAFD0 /* OGSUserReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00D850317D48BFA00BFAFD0 /* OGSUserReportsViewController.m */; };
+		C00D850617D48BFA00BFAFD0 /* OGSUserReportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00D850417D48BFA00BFAFD0 /* OGSUserReportsViewController.xib */; };
+		C039369017CB600A00ED58BC /* OGSSiteLocatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C039368E17CB600A00ED58BC /* OGSSiteLocatorViewController.m */; };
+		C039369117CB600A00ED58BC /* OGSSiteLocatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C039368F17CB600A00ED58BC /* OGSSiteLocatorViewController.xib */; };
+		C04EA69317CC6D7F00838CEA /* OGSOilAndGasSites.m in Sources */ = {isa = PBXBuildFile; fileRef = C04EA69217CC6D7F00838CEA /* OGSOilAndGasSites.m */; };
+		C04EA69717CCE07300838CEA /* worldMap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C04EA69617CCE07300838CEA /* worldMap.jpg */; };
+		C09DA88E17C77B7900ACB5DF /* OGSNewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DA88C17C77B7900ACB5DF /* OGSNewsDetailsViewController.m */; };
+		C09DA88F17C77B7900ACB5DF /* OGSNewsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C09DA88D17C77B7900ACB5DF /* OGSNewsDetailsViewController.xib */; };
+		C09DA8AB17C79E3300ACB5DF /* NewsImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A217C79E3300ACB5DF /* NewsImage1.jpg */; };
+		C09DA8AC17C79E3300ACB5DF /* NewsImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A317C79E3300ACB5DF /* NewsImage2.jpg */; };
+		C09DA8AD17C79E3300ACB5DF /* NewsImage3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A417C79E3300ACB5DF /* NewsImage3.jpg */; };
+		C09DA8AE17C79E3300ACB5DF /* NewsImage4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A517C79E3300ACB5DF /* NewsImage4.jpg */; };
+		C09DA8AF17C79E3300ACB5DF /* NewsImage5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A617C79E3300ACB5DF /* NewsImage5.jpg */; };
+		C09DA8B017C79E3300ACB5DF /* NewsImage6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A717C79E3300ACB5DF /* NewsImage6.jpg */; };
+		C09DA8B117C79E3300ACB5DF /* NewsImage7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A817C79E3300ACB5DF /* NewsImage7.jpg */; };
+		C09DA8B217C79E3300ACB5DF /* NewsImage8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8A917C79E3300ACB5DF /* NewsImage8.jpg */; };
+		C09DA8B317C79E3300ACB5DF /* NewsImage9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C09DA8AA17C79E3300ACB5DF /* NewsImage9.jpg */; };
+		C0A376E117C615CE0086B9CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A376E017C615CE0086B9CE /* UIKit.framework */; };
+		C0A376E317C615CE0086B9CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A376E217C615CE0086B9CE /* Foundation.framework */; };
+		C0A376E517C615CE0086B9CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A376E417C615CE0086B9CE /* CoreGraphics.framework */; };
+		C0A376EB17C615CE0086B9CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0A376E917C615CE0086B9CE /* InfoPlist.strings */; };
+		C0A376ED17C615CE0086B9CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A376EC17C615CE0086B9CE /* main.m */; };
+		C0A376F117C615CE0086B9CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A376F017C615CE0086B9CE /* AppDelegate.m */; };
+		C0A376F317C615CE0086B9CE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A376F217C615CE0086B9CE /* Default.png */; };
+		C0A376F517C615CE0086B9CE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A376F417C615CE0086B9CE /* Default@2x.png */; };
+		C0A376F717C615CE0086B9CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A376F617C615CE0086B9CE /* Default-568h@2x.png */; };
+		C0A3770B17C616D60086B9CE /* OGSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A3770917C616D60086B9CE /* OGSHomeViewController.m */; };
+		C0A3770C17C616D60086B9CE /* OGSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A3770A17C616D60086B9CE /* OGSHomeViewController.xib */; };
+		C0A3771217C617280086B9CE /* OGSContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A3771017C617280086B9CE /* OGSContactUsViewController.m */; };
+		C0A3771317C617280086B9CE /* OGSContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A3771117C617280086B9CE /* OGSContactUsViewController.xib */; };
+		C0A3771817C617490086B9CE /* OGSNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A3771617C617490086B9CE /* OGSNewsListViewController.m */; };
+		C0A3771917C617490086B9CE /* OGSNewsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A3771717C617490086B9CE /* OGSNewsListViewController.xib */; };
+		C0A3772317C619010086B9CE /* Tab_Bar_Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A3772117C619010086B9CE /* Tab_Bar_Bg.png */; };
+		C0A3772417C619010086B9CE /* Tab_Bar_Bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A3772217C619010086B9CE /* Tab_Bar_Bg@2x.png */; };
+		C0A3772617C61A380086B9CE /* Tab_home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A3772517C61A380086B9CE /* Tab_home_icon.png */; };
+		C0A3772B17C61A7B0086B9CE /* OGSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A3772917C61A7B0086B9CE /* OGSLoginViewController.m */; };
+		C0A3772C17C61A7B0086B9CE /* OGSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A3772A17C61A7B0086B9CE /* OGSLoginViewController.xib */; };
+		C0A3773017C620ED0086B9CE /* OGSBusinessClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A3772F17C620ED0086B9CE /* OGSBusinessClass.m */; };
+		C0A3773517C625630086B9CE /* Login1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A3773117C625630086B9CE /* Login1.png */; };
+		C0A3773617C625630086B9CE /* Login2.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A3773217C625630086B9CE /* Login2.png */; };
+		C0A3773717C625630086B9CE /* Login3.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A3773317C625630086B9CE /* Login3.png */; };
+		C0A3773817C625630086B9CE /* Login4.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A3773417C625630086B9CE /* Login4.png */; };
+		DC03B39517CE177300C394C4 /* OGSReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC03B39317CE177300C394C4 /* OGSReportsViewController.m */; };
+		DC03B39617CE177300C394C4 /* OGSReportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC03B39417CE177300C394C4 /* OGSReportsViewController.xib */; };
+		DC03B39817CE179900C394C4 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = DC03B39717CE179900C394C4 /* reload.png */; };
+		DC03B39A17CE2BEC00C394C4 /* contact_us_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC03B39917CE2BEC00C394C4 /* contact_us_logo.png */; };
+		DC4DE45D17D1F5F6000B6860 /* OGSScatterPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE45C17D1F5F6000B6860 /* OGSScatterPlot.m */; };
+		DC86435D17C783D60000D08B /* maps_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC86435A17C783D60000D08B /* maps_logo.png */; };
+		DC86435E17C783D60000D08B /* risk_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC86435B17C783D60000D08B /* risk_logo.png */; };
+		DC86436117C785600000D08B /* news_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC86435F17C785600000D08B /* news_logo.png */; };
+		DC86436217C785600000D08B /* report_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC86436017C785600000D08B /* report_logo.png */; };
+		DC90588117CF7FB90085116B /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90583317CF7FB90085116B /* libCorePlot-CocoaTouch.a */; };
+		DC90588317CF80ED0085116B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC90588217CF80ED0085116B /* QuartzCore.framework */; };
+		DC90589017CF82D00085116B /* OGSBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90588717CF82D00085116B /* OGSBarChart.m */; };
+		DC90589117CF82D00085116B /* OGSBarGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90588917CF82D00085116B /* OGSBarGraph.m */; };
+		DC90589217CF82D00085116B /* OGSGraphConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90588B17CF82D00085116B /* OGSGraphConstants.m */; };
+		DC90589317CF82D00085116B /* OGSGraphData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90588D17CF82D00085116B /* OGSGraphData.m */; };
+		DC90589417CF82D00085116B /* OGSSecondGraphData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90588F17CF82D00085116B /* OGSSecondGraphData.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		265B6A3B17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSRiskManagementHomeViewController.h; path = "Presentation Layer/Risk Management/OGSRiskManagementHomeViewController.h"; sourceTree = "<group>"; };
+		265B6A3C17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSRiskManagementHomeViewController.m; path = "Presentation Layer/Risk Management/OGSRiskManagementHomeViewController.m"; sourceTree = "<group>"; };
+		265B6A3D17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSRiskManagementHomeViewController.xib; path = "Presentation Layer/Risk Management/OGSRiskManagementHomeViewController.xib"; sourceTree = "<group>"; };
+		265B6A4E17CB900800BB8DDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		265B6A5017CB901000BB8DDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		265C7AB017CF493D00859ADE /* OGSRiskVIewIncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSRiskVIewIncidentViewController.h; path = "Presentation Layer/Risk Management/OGSRiskVIewIncidentViewController.h"; sourceTree = "<group>"; };
+		265C7AB117CF493D00859ADE /* OGSRiskVIewIncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSRiskVIewIncidentViewController.m; path = "Presentation Layer/Risk Management/OGSRiskVIewIncidentViewController.m"; sourceTree = "<group>"; };
+		265C7AB217CF493D00859ADE /* OGSRiskVIewIncidentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSRiskVIewIncidentViewController.xib; path = "Presentation Layer/Risk Management/OGSRiskVIewIncidentViewController.xib"; sourceTree = "<group>"; };
+		265C7ABE17CF89FE00859ADE /* emergency_exit_route - Mar12_.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "emergency_exit_route - Mar12_.jpg"; sourceTree = "<group>"; };
+		265C7AC017CF89FE00859ADE /* EscapeRoute.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EscapeRoute.jpg; sourceTree = "<group>"; };
+		265C7AC117CF89FE00859ADE /* image6671.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image6671.jpg; sourceTree = "<group>"; };
+		265C7AC917D05D1E00859ADE /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
+		C00D850217D48BFA00BFAFD0 /* OGSUserReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSUserReportsViewController.h; path = "Presentation Layer/Reports/OGSUserReportsViewController.h"; sourceTree = "<group>"; };
+		C00D850317D48BFA00BFAFD0 /* OGSUserReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSUserReportsViewController.m; path = "Presentation Layer/Reports/OGSUserReportsViewController.m"; sourceTree = "<group>"; };
+		C00D850417D48BFA00BFAFD0 /* OGSUserReportsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSUserReportsViewController.xib; path = "Presentation Layer/Reports/OGSUserReportsViewController.xib"; sourceTree = "<group>"; };
+		C039368D17CB600A00ED58BC /* OGSSiteLocatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSSiteLocatorViewController.h; path = "Presentation Layer/Site Locator/OGSSiteLocatorViewController.h"; sourceTree = "<group>"; };
+		C039368E17CB600A00ED58BC /* OGSSiteLocatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSSiteLocatorViewController.m; path = "Presentation Layer/Site Locator/OGSSiteLocatorViewController.m"; sourceTree = "<group>"; };
+		C039368F17CB600A00ED58BC /* OGSSiteLocatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSSiteLocatorViewController.xib; path = "Presentation Layer/Site Locator/OGSSiteLocatorViewController.xib"; sourceTree = "<group>"; };
+		C04EA69117CC6D7F00838CEA /* OGSOilAndGasSites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSOilAndGasSites.h; path = "Presentation Layer/Site Locator/OGSOilAndGasSites.h"; sourceTree = "<group>"; };
+		C04EA69217CC6D7F00838CEA /* OGSOilAndGasSites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSOilAndGasSites.m; path = "Presentation Layer/Site Locator/OGSOilAndGasSites.m"; sourceTree = "<group>"; };
+		C04EA69617CCE07300838CEA /* worldMap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = worldMap.jpg; path = Resources/Images/SiteLocator/worldMap.jpg; sourceTree = "<group>"; };
+		C09DA88B17C77B7900ACB5DF /* OGSNewsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSNewsDetailsViewController.h; path = "Presentation Layer/News/OGSNewsDetailsViewController.h"; sourceTree = "<group>"; };
+		C09DA88C17C77B7900ACB5DF /* OGSNewsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSNewsDetailsViewController.m; path = "Presentation Layer/News/OGSNewsDetailsViewController.m"; sourceTree = "<group>"; };
+		C09DA88D17C77B7900ACB5DF /* OGSNewsDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSNewsDetailsViewController.xib; path = "Presentation Layer/News/OGSNewsDetailsViewController.xib"; sourceTree = "<group>"; };
+		C09DA8A217C79E3300ACB5DF /* NewsImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage1.jpg; path = Resources/Images/News/NewsImage1.jpg; sourceTree = "<group>"; };
+		C09DA8A317C79E3300ACB5DF /* NewsImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage2.jpg; path = Resources/Images/News/NewsImage2.jpg; sourceTree = "<group>"; };
+		C09DA8A417C79E3300ACB5DF /* NewsImage3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage3.jpg; path = Resources/Images/News/NewsImage3.jpg; sourceTree = "<group>"; };
+		C09DA8A517C79E3300ACB5DF /* NewsImage4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage4.jpg; path = Resources/Images/News/NewsImage4.jpg; sourceTree = "<group>"; };
+		C09DA8A617C79E3300ACB5DF /* NewsImage5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage5.jpg; path = Resources/Images/News/NewsImage5.jpg; sourceTree = "<group>"; };
+		C09DA8A717C79E3300ACB5DF /* NewsImage6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage6.jpg; path = Resources/Images/News/NewsImage6.jpg; sourceTree = "<group>"; };
+		C09DA8A817C79E3300ACB5DF /* NewsImage7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage7.jpg; path = Resources/Images/News/NewsImage7.jpg; sourceTree = "<group>"; };
+		C09DA8A917C79E3300ACB5DF /* NewsImage8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage8.jpg; path = Resources/Images/News/NewsImage8.jpg; sourceTree = "<group>"; };
+		C09DA8AA17C79E3300ACB5DF /* NewsImage9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewsImage9.jpg; path = Resources/Images/News/NewsImage9.jpg; sourceTree = "<group>"; };
+		C0A376DD17C615CE0086B9CE /* OilAndGasSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OilAndGasSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A376E017C615CE0086B9CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C0A376E217C615CE0086B9CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C0A376E417C615CE0086B9CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C0A376E817C615CE0086B9CE /* OilAndGasSolution-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OilAndGasSolution-Info.plist"; sourceTree = "<group>"; };
+		C0A376EA17C615CE0086B9CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0A376EC17C615CE0086B9CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C0A376EE17C615CE0086B9CE /* OilAndGasSolution-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OilAndGasSolution-Prefix.pch"; sourceTree = "<group>"; };
+		C0A376EF17C615CE0086B9CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C0A376F017C615CE0086B9CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C0A376F217C615CE0086B9CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C0A376F417C615CE0086B9CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C0A376F617C615CE0086B9CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C0A3770817C616D60086B9CE /* OGSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSHomeViewController.h; path = "Presentation Layer/Home/OGSHomeViewController.h"; sourceTree = "<group>"; };
+		C0A3770917C616D60086B9CE /* OGSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSHomeViewController.m; path = "Presentation Layer/Home/OGSHomeViewController.m"; sourceTree = "<group>"; };
+		C0A3770A17C616D60086B9CE /* OGSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSHomeViewController.xib; path = "Presentation Layer/Home/OGSHomeViewController.xib"; sourceTree = "<group>"; };
+		C0A3770F17C617280086B9CE /* OGSContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSContactUsViewController.h; path = "Presentation Layer/Contacts/OGSContactUsViewController.h"; sourceTree = "<group>"; };
+		C0A3771017C617280086B9CE /* OGSContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSContactUsViewController.m; path = "Presentation Layer/Contacts/OGSContactUsViewController.m"; sourceTree = "<group>"; };
+		C0A3771117C617280086B9CE /* OGSContactUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSContactUsViewController.xib; path = "Presentation Layer/Contacts/OGSContactUsViewController.xib"; sourceTree = "<group>"; };
+		C0A3771517C617490086B9CE /* OGSNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSNewsListViewController.h; path = "Presentation Layer/News/OGSNewsListViewController.h"; sourceTree = "<group>"; };
+		C0A3771617C617490086B9CE /* OGSNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSNewsListViewController.m; path = "Presentation Layer/News/OGSNewsListViewController.m"; sourceTree = "<group>"; };
+		C0A3771717C617490086B9CE /* OGSNewsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSNewsListViewController.xib; path = "Presentation Layer/News/OGSNewsListViewController.xib"; sourceTree = "<group>"; };
+		C0A3772117C619010086B9CE /* Tab_Bar_Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tab_Bar_Bg.png; path = Resources/Images/Generic/Tab_Bar_Bg.png; sourceTree = "<group>"; };
+		C0A3772217C619010086B9CE /* Tab_Bar_Bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tab_Bar_Bg@2x.png"; path = "Resources/Images/Generic/Tab_Bar_Bg@2x.png"; sourceTree = "<group>"; };
+		C0A3772517C61A380086B9CE /* Tab_home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tab_home_icon.png; path = Resources/Images/Home/Tab_home_icon.png; sourceTree = "<group>"; };
+		C0A3772817C61A7B0086B9CE /* OGSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSLoginViewController.h; path = "Presentation Layer/Home/OGSLoginViewController.h"; sourceTree = "<group>"; };
+		C0A3772917C61A7B0086B9CE /* OGSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSLoginViewController.m; path = "Presentation Layer/Home/OGSLoginViewController.m"; sourceTree = "<group>"; };
+		C0A3772A17C61A7B0086B9CE /* OGSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OGSLoginViewController.xib; path = "Presentation Layer/Home/OGSLoginViewController.xib"; sourceTree = "<group>"; };
+		C0A3772E17C620ED0086B9CE /* OGSBusinessClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSBusinessClass.h; path = "Business Layer/OGSBusinessClass.h"; sourceTree = "<group>"; };
+		C0A3772F17C620ED0086B9CE /* OGSBusinessClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSBusinessClass.m; path = "Business Layer/OGSBusinessClass.m"; sourceTree = "<group>"; };
+		C0A3773117C625630086B9CE /* Login1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Login1.png; path = Resources/Images/Home/Login1.png; sourceTree = "<group>"; };
+		C0A3773217C625630086B9CE /* Login2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Login2.png; path = Resources/Images/Home/Login2.png; sourceTree = "<group>"; };
+		C0A3773317C625630086B9CE /* Login3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Login3.png; path = Resources/Images/Home/Login3.png; sourceTree = "<group>"; };
+		C0A3773417C625630086B9CE /* Login4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Login4.png; path = Resources/Images/Home/Login4.png; sourceTree = "<group>"; };
+		DC03B39217CE177300C394C4 /* OGSReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGSReportsViewController.h; sourceTree = "<group>"; };
+		DC03B39317CE177300C394C4 /* OGSReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGSReportsViewController.m; sourceTree = "<group>"; };
+		DC03B39417CE177300C394C4 /* OGSReportsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OGSReportsViewController.xib; sourceTree = "<group>"; };
+		DC03B39717CE179900C394C4 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload.png; path = Resources/Images/ContactUs/reload.png; sourceTree = "<group>"; };
+		DC03B39917CE2BEC00C394C4 /* contact_us_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact_us_logo.png; path = Resources/Images/ContactUs/contact_us_logo.png; sourceTree = "<group>"; };
+		DC4DE45B17D1F5F6000B6860 /* OGSScatterPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSScatterPlot.h; path = "Presentation Layer/Reports/ScatterPlot/OGSScatterPlot.h"; sourceTree = "<group>"; };
+		DC4DE45C17D1F5F6000B6860 /* OGSScatterPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSScatterPlot.m; path = "Presentation Layer/Reports/ScatterPlot/OGSScatterPlot.m"; sourceTree = "<group>"; };
+		DC86435A17C783D60000D08B /* maps_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maps_logo.png; path = Resources/Images/RiskManagement/maps_logo.png; sourceTree = "<group>"; };
+		DC86435B17C783D60000D08B /* risk_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = risk_logo.png; path = Resources/Images/RiskManagement/risk_logo.png; sourceTree = "<group>"; };
+		DC86435F17C785600000D08B /* news_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = news_logo.png; path = Resources/Images/RiskManagement/news_logo.png; sourceTree = "<group>"; };
+		DC86436017C785600000D08B /* report_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = report_logo.png; path = Resources/Images/RiskManagement/report_logo.png; sourceTree = "<group>"; };
+		DC90583317CF7FB90085116B /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCorePlot-CocoaTouch.a"; path = "CorePlot/libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		DC90583417CF7FB90085116B /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CorePlot-CocoaTouch.h"; path = "CorePlot/CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
+		DC90583517CF7FB90085116B /* CPTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAnimation.h; path = CorePlot/CPTAnimation.h; sourceTree = "<group>"; };
+		DC90583617CF7FB90085116B /* CPTAnimationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAnimationOperation.h; path = CorePlot/CPTAnimationOperation.h; sourceTree = "<group>"; };
+		DC90583717CF7FB90085116B /* CPTAnimationPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAnimationPeriod.h; path = CorePlot/CPTAnimationPeriod.h; sourceTree = "<group>"; };
+		DC90583817CF7FB90085116B /* CPTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAnnotation.h; path = CorePlot/CPTAnnotation.h; sourceTree = "<group>"; };
+		DC90583917CF7FB90085116B /* CPTAnnotationHostLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAnnotationHostLayer.h; path = CorePlot/CPTAnnotationHostLayer.h; sourceTree = "<group>"; };
+		DC90583A17CF7FB90085116B /* CPTAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAxis.h; path = CorePlot/CPTAxis.h; sourceTree = "<group>"; };
+		DC90583B17CF7FB90085116B /* CPTAxisLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAxisLabel.h; path = CorePlot/CPTAxisLabel.h; sourceTree = "<group>"; };
+		DC90583C17CF7FB90085116B /* CPTAxisLabelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAxisLabelGroup.h; path = CorePlot/CPTAxisLabelGroup.h; sourceTree = "<group>"; };
+		DC90583D17CF7FB90085116B /* CPTAxisSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAxisSet.h; path = CorePlot/CPTAxisSet.h; sourceTree = "<group>"; };
+		DC90583E17CF7FB90085116B /* CPTAxisTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTAxisTitle.h; path = CorePlot/CPTAxisTitle.h; sourceTree = "<group>"; };
+		DC90583F17CF7FB90085116B /* CPTBarPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTBarPlot.h; path = CorePlot/CPTBarPlot.h; sourceTree = "<group>"; };
+		DC90584017CF7FB90085116B /* CPTBorderedLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTBorderedLayer.h; path = CorePlot/CPTBorderedLayer.h; sourceTree = "<group>"; };
+		DC90584117CF7FB90085116B /* CPTCalendarFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTCalendarFormatter.h; path = CorePlot/CPTCalendarFormatter.h; sourceTree = "<group>"; };
+		DC90584217CF7FB90085116B /* CPTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTColor.h; path = CorePlot/CPTColor.h; sourceTree = "<group>"; };
+		DC90584317CF7FB90085116B /* CPTColorSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTColorSpace.h; path = CorePlot/CPTColorSpace.h; sourceTree = "<group>"; };
+		DC90584417CF7FB90085116B /* CPTConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTConstraints.h; path = CorePlot/CPTConstraints.h; sourceTree = "<group>"; };
+		DC90584517CF7FB90085116B /* CPTDataSourceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTDataSourceTestCase.h; path = CorePlot/CPTDataSourceTestCase.h; sourceTree = "<group>"; };
+		DC90584617CF7FB90085116B /* CPTDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTDefinitions.h; path = CorePlot/CPTDefinitions.h; sourceTree = "<group>"; };
+		DC90584717CF7FB90085116B /* CPTDerivedXYGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTDerivedXYGraph.h; path = CorePlot/CPTDerivedXYGraph.h; sourceTree = "<group>"; };
+		DC90584817CF7FB90085116B /* CPTExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTExceptions.h; path = CorePlot/CPTExceptions.h; sourceTree = "<group>"; };
+		DC90584917CF7FB90085116B /* CPTFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTFill.h; path = CorePlot/CPTFill.h; sourceTree = "<group>"; };
+		DC90584A17CF7FB90085116B /* CPTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTGradient.h; path = CorePlot/CPTGradient.h; sourceTree = "<group>"; };
+		DC90584B17CF7FB90085116B /* CPTGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTGraph.h; path = CorePlot/CPTGraph.h; sourceTree = "<group>"; };
+		DC90584C17CF7FB90085116B /* CPTGraphHostingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTGraphHostingView.h; path = CorePlot/CPTGraphHostingView.h; sourceTree = "<group>"; };
+		DC90584D17CF7FB90085116B /* CPTGridLineGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTGridLineGroup.h; path = CorePlot/CPTGridLineGroup.h; sourceTree = "<group>"; };
+		DC90584E17CF7FB90085116B /* CPTGridLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTGridLines.h; path = CorePlot/CPTGridLines.h; sourceTree = "<group>"; };
+		DC90584F17CF7FB90085116B /* CPTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTImage.h; path = CorePlot/CPTImage.h; sourceTree = "<group>"; };
+		DC90585017CF7FB90085116B /* CPTLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTLayer.h; path = CorePlot/CPTLayer.h; sourceTree = "<group>"; };
+		DC90585117CF7FB90085116B /* CPTLayerAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTLayerAnnotation.h; path = CorePlot/CPTLayerAnnotation.h; sourceTree = "<group>"; };
+		DC90585217CF7FB90085116B /* CPTLegend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTLegend.h; path = CorePlot/CPTLegend.h; sourceTree = "<group>"; };
+		DC90585317CF7FB90085116B /* CPTLegendEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTLegendEntry.h; path = CorePlot/CPTLegendEntry.h; sourceTree = "<group>"; };
+		DC90585417CF7FB90085116B /* CPTLimitBand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTLimitBand.h; path = CorePlot/CPTLimitBand.h; sourceTree = "<group>"; };
+		DC90585517CF7FB90085116B /* CPTLineCap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTLineCap.h; path = CorePlot/CPTLineCap.h; sourceTree = "<group>"; };
+		DC90585617CF7FB90085116B /* CPTLineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTLineStyle.h; path = CorePlot/CPTLineStyle.h; sourceTree = "<group>"; };
+		DC90585717CF7FB90085116B /* CPTMutableLineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTMutableLineStyle.h; path = CorePlot/CPTMutableLineStyle.h; sourceTree = "<group>"; };
+		DC90585817CF7FB90085116B /* CPTMutableNumericData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTMutableNumericData.h; path = CorePlot/CPTMutableNumericData.h; sourceTree = "<group>"; };
+		DC90585917CF7FB90085116B /* CPTMutableNumericData+TypeConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CPTMutableNumericData+TypeConversion.h"; path = "CorePlot/CPTMutableNumericData+TypeConversion.h"; sourceTree = "<group>"; };
+		DC90585A17CF7FB90085116B /* CPTMutablePlotRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTMutablePlotRange.h; path = CorePlot/CPTMutablePlotRange.h; sourceTree = "<group>"; };
+		DC90585B17CF7FB90085116B /* CPTMutableShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTMutableShadow.h; path = CorePlot/CPTMutableShadow.h; sourceTree = "<group>"; };
+		DC90585C17CF7FB90085116B /* CPTMutableTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTMutableTextStyle.h; path = CorePlot/CPTMutableTextStyle.h; sourceTree = "<group>"; };
+		DC90585D17CF7FB90085116B /* CPTNumericData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTNumericData.h; path = CorePlot/CPTNumericData.h; sourceTree = "<group>"; };
+		DC90585E17CF7FB90085116B /* CPTNumericData+TypeConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CPTNumericData+TypeConversion.h"; path = "CorePlot/CPTNumericData+TypeConversion.h"; sourceTree = "<group>"; };
+		DC90585F17CF7FB90085116B /* CPTNumericDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTNumericDataType.h; path = CorePlot/CPTNumericDataType.h; sourceTree = "<group>"; };
+		DC90586017CF7FB90085116B /* CPTPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPathExtensions.h; path = CorePlot/CPTPathExtensions.h; sourceTree = "<group>"; };
+		DC90586117CF7FB90085116B /* CPTPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPieChart.h; path = CorePlot/CPTPieChart.h; sourceTree = "<group>"; };
+		DC90586217CF7FB90085116B /* CPTPlatformSpecificCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlatformSpecificCategories.h; path = CorePlot/CPTPlatformSpecificCategories.h; sourceTree = "<group>"; };
+		DC90586317CF7FB90085116B /* CPTPlatformSpecificDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlatformSpecificDefines.h; path = CorePlot/CPTPlatformSpecificDefines.h; sourceTree = "<group>"; };
+		DC90586417CF7FB90085116B /* CPTPlatformSpecificFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlatformSpecificFunctions.h; path = CorePlot/CPTPlatformSpecificFunctions.h; sourceTree = "<group>"; };
+		DC90586517CF7FB90085116B /* CPTPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlot.h; path = CorePlot/CPTPlot.h; sourceTree = "<group>"; };
+		DC90586617CF7FB90085116B /* CPTPlotArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlotArea.h; path = CorePlot/CPTPlotArea.h; sourceTree = "<group>"; };
+		DC90586717CF7FB90085116B /* CPTPlotAreaFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlotAreaFrame.h; path = CorePlot/CPTPlotAreaFrame.h; sourceTree = "<group>"; };
+		DC90586817CF7FB90085116B /* CPTPlotGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlotGroup.h; path = CorePlot/CPTPlotGroup.h; sourceTree = "<group>"; };
+		DC90586917CF7FB90085116B /* CPTPlotRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlotRange.h; path = CorePlot/CPTPlotRange.h; sourceTree = "<group>"; };
+		DC90586A17CF7FB90085116B /* CPTPlotSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlotSpace.h; path = CorePlot/CPTPlotSpace.h; sourceTree = "<group>"; };
+		DC90586B17CF7FB90085116B /* CPTPlotSpaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlotSpaceAnnotation.h; path = CorePlot/CPTPlotSpaceAnnotation.h; sourceTree = "<group>"; };
+		DC90586C17CF7FB90085116B /* CPTPlotSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTPlotSymbol.h; path = CorePlot/CPTPlotSymbol.h; sourceTree = "<group>"; };
+		DC90586D17CF7FB90085116B /* CPTRangePlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTRangePlot.h; path = CorePlot/CPTRangePlot.h; sourceTree = "<group>"; };
+		DC90586E17CF7FB90085116B /* CPTResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTResponder.h; path = CorePlot/CPTResponder.h; sourceTree = "<group>"; };
+		DC90586F17CF7FB90085116B /* CPTScatterPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTScatterPlot.h; path = CorePlot/CPTScatterPlot.h; sourceTree = "<group>"; };
+		DC90587017CF7FB90085116B /* CPTShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTShadow.h; path = CorePlot/CPTShadow.h; sourceTree = "<group>"; };
+		DC90587117CF7FB90085116B /* CPTTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTTestCase.h; path = CorePlot/CPTTestCase.h; sourceTree = "<group>"; };
+		DC90587217CF7FB90085116B /* CPTTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTTextLayer.h; path = CorePlot/CPTTextLayer.h; sourceTree = "<group>"; };
+		DC90587317CF7FB90085116B /* CPTTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTTextStyle.h; path = CorePlot/CPTTextStyle.h; sourceTree = "<group>"; };
+		DC90587417CF7FB90085116B /* CPTTextStylePlatformSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTTextStylePlatformSpecific.h; path = CorePlot/CPTTextStylePlatformSpecific.h; sourceTree = "<group>"; };
+		DC90587517CF7FB90085116B /* CPTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTTheme.h; path = CorePlot/CPTTheme.h; sourceTree = "<group>"; };
+		DC90587617CF7FB90085116B /* CPTTimeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTTimeFormatter.h; path = CorePlot/CPTTimeFormatter.h; sourceTree = "<group>"; };
+		DC90587717CF7FB90085116B /* CPTTradingRangePlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTTradingRangePlot.h; path = CorePlot/CPTTradingRangePlot.h; sourceTree = "<group>"; };
+		DC90587817CF7FB90085116B /* CPTUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTUtilities.h; path = CorePlot/CPTUtilities.h; sourceTree = "<group>"; };
+		DC90587917CF7FB90085116B /* CPTXYAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTXYAxis.h; path = CorePlot/CPTXYAxis.h; sourceTree = "<group>"; };
+		DC90587A17CF7FB90085116B /* CPTXYAxisSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTXYAxisSet.h; path = CorePlot/CPTXYAxisSet.h; sourceTree = "<group>"; };
+		DC90587B17CF7FB90085116B /* CPTXYGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTXYGraph.h; path = CorePlot/CPTXYGraph.h; sourceTree = "<group>"; };
+		DC90587C17CF7FB90085116B /* CPTXYPlotSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPTXYPlotSpace.h; path = CorePlot/CPTXYPlotSpace.h; sourceTree = "<group>"; };
+		DC90587D17CF7FB90085116B /* mainpage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mainpage.h; path = CorePlot/mainpage.h; sourceTree = "<group>"; };
+		DC90587E17CF7FB90085116B /* NSCoderExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSCoderExtensions.h; path = CorePlot/NSCoderExtensions.h; sourceTree = "<group>"; };
+		DC90587F17CF7FB90085116B /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDecimalNumberExtensions.h; path = CorePlot/NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
+		DC90588017CF7FB90085116B /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSNumberExtensions.h; path = CorePlot/NSNumberExtensions.h; sourceTree = "<group>"; };
+		DC90588217CF80ED0085116B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DC90588617CF82D00085116B /* OGSBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSBarChart.h; path = "Presentation Layer/Reports/OGSBarChart.h"; sourceTree = "<group>"; };
+		DC90588717CF82D00085116B /* OGSBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSBarChart.m; path = "Presentation Layer/Reports/OGSBarChart.m"; sourceTree = "<group>"; };
+		DC90588817CF82D00085116B /* OGSBarGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSBarGraph.h; path = "Presentation Layer/Reports/OGSBarGraph.h"; sourceTree = "<group>"; };
+		DC90588917CF82D00085116B /* OGSBarGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSBarGraph.m; path = "Presentation Layer/Reports/OGSBarGraph.m"; sourceTree = "<group>"; };
+		DC90588A17CF82D00085116B /* OGSGraphConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSGraphConstants.h; path = "Presentation Layer/Reports/OGSGraphConstants.h"; sourceTree = "<group>"; };
+		DC90588B17CF82D00085116B /* OGSGraphConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSGraphConstants.m; path = "Presentation Layer/Reports/OGSGraphConstants.m"; sourceTree = "<group>"; };
+		DC90588C17CF82D00085116B /* OGSGraphData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSGraphData.h; path = "Presentation Layer/Reports/OGSGraphData.h"; sourceTree = "<group>"; };
+		DC90588D17CF82D00085116B /* OGSGraphData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSGraphData.m; path = "Presentation Layer/Reports/OGSGraphData.m"; sourceTree = "<group>"; };
+		DC90588E17CF82D00085116B /* OGSSecondGraphData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OGSSecondGraphData.h; path = "Presentation Layer/Reports/OGSSecondGraphData.h"; sourceTree = "<group>"; };
+		DC90588F17CF82D00085116B /* OGSSecondGraphData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OGSSecondGraphData.m; path = "Presentation Layer/Reports/OGSSecondGraphData.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0A376DA17C615CE0086B9CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC90588317CF80ED0085116B /* QuartzCore.framework in Frameworks */,
+				265B6A5317CB903300BB8DDF /* CoreLocation.framework in Frameworks */,
+				265B6A5217CB902C00BB8DDF /* MapKit.framework in Frameworks */,
+				C0A376E117C615CE0086B9CE /* UIKit.framework in Frameworks */,
+				C0A376E317C615CE0086B9CE /* Foundation.framework in Frameworks */,
+				C0A376E517C615CE0086B9CE /* CoreGraphics.framework in Frameworks */,
+				DC90588117CF7FB90085116B /* libCorePlot-CocoaTouch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26F5CF2217CF0E6C00AD4470 /* Safety Measures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Safety Measures";
+			path = "Presentation Layer/Risk Management/Safety Measures";
+			sourceTree = "<group>";
+		};
+		C00D84F517D099A000BFAFD0 /* UserReportsVC */ = {
+			isa = PBXGroup;
+			children = (
+				C00D850217D48BFA00BFAFD0 /* OGSUserReportsViewController.h */,
+				C00D850317D48BFA00BFAFD0 /* OGSUserReportsViewController.m */,
+				C00D850417D48BFA00BFAFD0 /* OGSUserReportsViewController.xib */,
+				DC4DE45A17D1F5C9000B6860 /* ScatterPlot */,
+			);
+			name = UserReportsVC;
+			sourceTree = "<group>";
+		};
+		C04EA69517CCE06300838CEA /* Site Locator */ = {
+			isa = PBXGroup;
+			children = (
+				C04EA69617CCE07300838CEA /* worldMap.jpg */,
+			);
+			name = "Site Locator";
+			sourceTree = "<group>";
+		};
+		C09DA88A17C77B5200ACB5DF /* NewsDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				C09DA88B17C77B7900ACB5DF /* OGSNewsDetailsViewController.h */,
+				C09DA88C17C77B7900ACB5DF /* OGSNewsDetailsViewController.m */,
+				C09DA88D17C77B7900ACB5DF /* OGSNewsDetailsViewController.xib */,
+			);
+			name = NewsDetailsVC;
+			sourceTree = "<group>";
+		};
+		C0A376D417C615CD0086B9CE = {
+			isa = PBXGroup;
+			children = (
+				C0A376E617C615CE0086B9CE /* OilAndGasSolution */,
+				C0A376DF17C615CE0086B9CE /* Frameworks */,
+				C0A376DE17C615CE0086B9CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0A376DE17C615CE0086B9CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0A376DD17C615CE0086B9CE /* OilAndGasSolution.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0A376DF17C615CE0086B9CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC90588217CF80ED0085116B /* QuartzCore.framework */,
+				265B6A4E17CB900800BB8DDF /* MapKit.framework */,
+				265B6A5017CB901000BB8DDF /* CoreLocation.framework */,
+				C0A376E017C615CE0086B9CE /* UIKit.framework */,
+				C0A376E217C615CE0086B9CE /* Foundation.framework */,
+				C0A376E417C615CE0086B9CE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0A376E617C615CE0086B9CE /* OilAndGasSolution */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3772D17C620C20086B9CE /* Business Layer */,
+				C0A3772017C618E80086B9CE /* Presentation Layer */,
+				C0A3771A17C618930086B9CE /* Resources */,
+				C0A376EF17C615CE0086B9CE /* AppDelegate.h */,
+				C0A376F017C615CE0086B9CE /* AppDelegate.m */,
+				C0A376E717C615CE0086B9CE /* Supporting Files */,
+			);
+			path = OilAndGasSolution;
+			sourceTree = "<group>";
+		};
+		C0A376E717C615CE0086B9CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0A376E817C615CE0086B9CE /* OilAndGasSolution-Info.plist */,
+				C0A376E917C615CE0086B9CE /* InfoPlist.strings */,
+				C0A376EC17C615CE0086B9CE /* main.m */,
+				C0A376EE17C615CE0086B9CE /* OilAndGasSolution-Prefix.pch */,
+				C0A376F217C615CE0086B9CE /* Default.png */,
+				C0A376F417C615CE0086B9CE /* Default@2x.png */,
+				C0A376F617C615CE0086B9CE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C0A3770317C6166C0086B9CE /* News Tab */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3771417C617300086B9CE /* NewsListVC */,
+				C09DA88A17C77B5200ACB5DF /* NewsDetailsVC */,
+			);
+			name = "News Tab";
+			sourceTree = "<group>";
+		};
+		C0A3770417C616780086B9CE /* Site Locator Tab */ = {
+			isa = PBXGroup;
+			children = (
+				C04EA69117CC6D7F00838CEA /* OGSOilAndGasSites.h */,
+				C04EA69217CC6D7F00838CEA /* OGSOilAndGasSites.m */,
+				C039368D17CB600A00ED58BC /* OGSSiteLocatorViewController.h */,
+				C039368E17CB600A00ED58BC /* OGSSiteLocatorViewController.m */,
+				C039368F17CB600A00ED58BC /* OGSSiteLocatorViewController.xib */,
+			);
+			name = "Site Locator Tab";
+			sourceTree = "<group>";
+		};
+		C0A3770517C616810086B9CE /* Contacts Tab */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3770E17C617080086B9CE /* ContactUsVC */,
+			);
+			name = "Contacts Tab";
+			sourceTree = "<group>";
+		};
+		C0A3770617C616890086B9CE /* Risk Management Tab */ = {
+			isa = PBXGroup;
+			children = (
+				26F5CF2217CF0E6C00AD4470 /* Safety Measures */,
+				265B6A3B17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.h */,
+				265B6A3C17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.m */,
+				265B6A3D17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.xib */,
+				265C7AB017CF493D00859ADE /* OGSRiskVIewIncidentViewController.h */,
+				265C7AB117CF493D00859ADE /* OGSRiskVIewIncidentViewController.m */,
+				265C7AB217CF493D00859ADE /* OGSRiskVIewIncidentViewController.xib */,
+			);
+			name = "Risk Management Tab";
+			sourceTree = "<group>";
+		};
+		C0A3770717C616940086B9CE /* Home Tab */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3772717C61A660086B9CE /* LoginVC */,
+				C0A3770D17C616DD0086B9CE /* HomeVC */,
+			);
+			name = "Home Tab";
+			sourceTree = "<group>";
+		};
+		C0A3770D17C616DD0086B9CE /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3770817C616D60086B9CE /* OGSHomeViewController.h */,
+				C0A3770917C616D60086B9CE /* OGSHomeViewController.m */,
+				C0A3770A17C616D60086B9CE /* OGSHomeViewController.xib */,
+			);
+			name = HomeVC;
+			sourceTree = "<group>";
+		};
+		C0A3770E17C617080086B9CE /* ContactUsVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3770F17C617280086B9CE /* OGSContactUsViewController.h */,
+				C0A3771017C617280086B9CE /* OGSContactUsViewController.m */,
+				C0A3771117C617280086B9CE /* OGSContactUsViewController.xib */,
+			);
+			name = ContactUsVC;
+			sourceTree = "<group>";
+		};
+		C0A3771417C617300086B9CE /* NewsListVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3771517C617490086B9CE /* OGSNewsListViewController.h */,
+				C0A3771617C617490086B9CE /* OGSNewsListViewController.m */,
+				C0A3771717C617490086B9CE /* OGSNewsListViewController.xib */,
+			);
+			name = NewsListVC;
+			sourceTree = "<group>";
+		};
+		C0A3771A17C618930086B9CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C04EA69517CCE06300838CEA /* Site Locator */,
+				C0A3771F17C618DF0086B9CE /* ContactUs */,
+				C0A3771E17C618D50086B9CE /* News */,
+				C0A3771D17C618CA0086B9CE /* RiskManagement */,
+				C0A3771C17C618C30086B9CE /* Generic */,
+				C0A3771B17C618BC0086B9CE /* Home */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C0A3771B17C618BC0086B9CE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3773117C625630086B9CE /* Login1.png */,
+				C0A3773217C625630086B9CE /* Login2.png */,
+				C0A3773317C625630086B9CE /* Login3.png */,
+				C0A3773417C625630086B9CE /* Login4.png */,
+				C0A3772517C61A380086B9CE /* Tab_home_icon.png */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		C0A3771C17C618C30086B9CE /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3772117C619010086B9CE /* Tab_Bar_Bg.png */,
+				C0A3772217C619010086B9CE /* Tab_Bar_Bg@2x.png */,
+			);
+			name = Generic;
+			sourceTree = "<group>";
+		};
+		C0A3771D17C618CA0086B9CE /* RiskManagement */ = {
+			isa = PBXGroup;
+			children = (
+				DC86436017C785600000D08B /* report_logo.png */,
+				265C7AC917D05D1E00859ADE /* images.jpg */,
+				265C7ABE17CF89FE00859ADE /* emergency_exit_route - Mar12_.jpg */,
+				265C7AC017CF89FE00859ADE /* EscapeRoute.jpg */,
+				265C7AC117CF89FE00859ADE /* image6671.jpg */,
+				DC86435A17C783D60000D08B /* maps_logo.png */,
+				DC86435B17C783D60000D08B /* risk_logo.png */,
+			);
+			name = RiskManagement;
+			sourceTree = "<group>";
+		};
+		C0A3771E17C618D50086B9CE /* News */ = {
+			isa = PBXGroup;
+			children = (
+				C09DA8A217C79E3300ACB5DF /* NewsImage1.jpg */,
+				C09DA8A317C79E3300ACB5DF /* NewsImage2.jpg */,
+				C09DA8A417C79E3300ACB5DF /* NewsImage3.jpg */,
+				C09DA8A517C79E3300ACB5DF /* NewsImage4.jpg */,
+				C09DA8A617C79E3300ACB5DF /* NewsImage5.jpg */,
+				C09DA8A717C79E3300ACB5DF /* NewsImage6.jpg */,
+				C09DA8A817C79E3300ACB5DF /* NewsImage7.jpg */,
+				C09DA8A917C79E3300ACB5DF /* NewsImage8.jpg */,
+				C09DA8AA17C79E3300ACB5DF /* NewsImage9.jpg */,
+				DC86435F17C785600000D08B /* news_logo.png */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		C0A3771F17C618DF0086B9CE /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				DC03B39917CE2BEC00C394C4 /* contact_us_logo.png */,
+				DC03B39717CE179900C394C4 /* reload.png */,
+			);
+			name = ContactUs;
+			sourceTree = "<group>";
+		};
+		C0A3772017C618E80086B9CE /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				DC03B39117CE176200C394C4 /* Report Tab */,
+				C0A3770717C616940086B9CE /* Home Tab */,
+				C0A3770617C616890086B9CE /* Risk Management Tab */,
+				C0A3770517C616810086B9CE /* Contacts Tab */,
+				C0A3770417C616780086B9CE /* Site Locator Tab */,
+				C0A3770317C6166C0086B9CE /* News Tab */,
+			);
+			name = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		C0A3772717C61A660086B9CE /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3772817C61A7B0086B9CE /* OGSLoginViewController.h */,
+				C0A3772917C61A7B0086B9CE /* OGSLoginViewController.m */,
+				C0A3772A17C61A7B0086B9CE /* OGSLoginViewController.xib */,
+			);
+			name = LoginVC;
+			sourceTree = "<group>";
+		};
+		C0A3772D17C620C20086B9CE /* Business Layer */ = {
+			isa = PBXGroup;
+			children = (
+				C0A3772E17C620ED0086B9CE /* OGSBusinessClass.h */,
+				C0A3772F17C620ED0086B9CE /* OGSBusinessClass.m */,
+			);
+			name = "Business Layer";
+			sourceTree = "<group>";
+		};
+		DC03B39117CE176200C394C4 /* Report Tab */ = {
+			isa = PBXGroup;
+			children = (
+				C00D84F517D099A000BFAFD0 /* UserReportsVC */,
+				DC90588517CF82BD0085116B /* BarChartVC */,
+				DC90579317CF7DF40085116B /* BarChart */,
+				DC03B39217CE177300C394C4 /* OGSReportsViewController.h */,
+				DC03B39317CE177300C394C4 /* OGSReportsViewController.m */,
+				DC03B39417CE177300C394C4 /* OGSReportsViewController.xib */,
+			);
+			name = "Report Tab";
+			sourceTree = "<group>";
+		};
+		DC4DE45A17D1F5C9000B6860 /* ScatterPlot */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DE45B17D1F5F6000B6860 /* OGSScatterPlot.h */,
+				DC4DE45C17D1F5F6000B6860 /* OGSScatterPlot.m */,
+			);
+			name = ScatterPlot;
+			sourceTree = "<group>";
+		};
+		DC90579317CF7DF40085116B /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				DC90583317CF7FB90085116B /* libCorePlot-CocoaTouch.a */,
+				DC90583417CF7FB90085116B /* CorePlot-CocoaTouch.h */,
+				DC90583517CF7FB90085116B /* CPTAnimation.h */,
+				DC90583617CF7FB90085116B /* CPTAnimationOperation.h */,
+				DC90583717CF7FB90085116B /* CPTAnimationPeriod.h */,
+				DC90583817CF7FB90085116B /* CPTAnnotation.h */,
+				DC90583917CF7FB90085116B /* CPTAnnotationHostLayer.h */,
+				DC90583A17CF7FB90085116B /* CPTAxis.h */,
+				DC90583B17CF7FB90085116B /* CPTAxisLabel.h */,
+				DC90583C17CF7FB90085116B /* CPTAxisLabelGroup.h */,
+				DC90583D17CF7FB90085116B /* CPTAxisSet.h */,
+				DC90583E17CF7FB90085116B /* CPTAxisTitle.h */,
+				DC90583F17CF7FB90085116B /* CPTBarPlot.h */,
+				DC90584017CF7FB90085116B /* CPTBorderedLayer.h */,
+				DC90584117CF7FB90085116B /* CPTCalendarFormatter.h */,
+				DC90584217CF7FB90085116B /* CPTColor.h */,
+				DC90584317CF7FB90085116B /* CPTColorSpace.h */,
+				DC90584417CF7FB90085116B /* CPTConstraints.h */,
+				DC90584517CF7FB90085116B /* CPTDataSourceTestCase.h */,
+				DC90584617CF7FB90085116B /* CPTDefinitions.h */,
+				DC90584717CF7FB90085116B /* CPTDerivedXYGraph.h */,
+				DC90584817CF7FB90085116B /* CPTExceptions.h */,
+				DC90584917CF7FB90085116B /* CPTFill.h */,
+				DC90584A17CF7FB90085116B /* CPTGradient.h */,
+				DC90584B17CF7FB90085116B /* CPTGraph.h */,
+				DC90584C17CF7FB90085116B /* CPTGraphHostingView.h */,
+				DC90584D17CF7FB90085116B /* CPTGridLineGroup.h */,
+				DC90584E17CF7FB90085116B /* CPTGridLines.h */,
+				DC90584F17CF7FB90085116B /* CPTImage.h */,
+				DC90585017CF7FB90085116B /* CPTLayer.h */,
+				DC90585117CF7FB90085116B /* CPTLayerAnnotation.h */,
+				DC90585217CF7FB90085116B /* CPTLegend.h */,
+				DC90585317CF7FB90085116B /* CPTLegendEntry.h */,
+				DC90585417CF7FB90085116B /* CPTLimitBand.h */,
+				DC90585517CF7FB90085116B /* CPTLineCap.h */,
+				DC90585617CF7FB90085116B /* CPTLineStyle.h */,
+				DC90585717CF7FB90085116B /* CPTMutableLineStyle.h */,
+				DC90585817CF7FB90085116B /* CPTMutableNumericData.h */,
+				DC90585917CF7FB90085116B /* CPTMutableNumericData+TypeConversion.h */,
+				DC90585A17CF7FB90085116B /* CPTMutablePlotRange.h */,
+				DC90585B17CF7FB90085116B /* CPTMutableShadow.h */,
+				DC90585C17CF7FB90085116B /* CPTMutableTextStyle.h */,
+				DC90585D17CF7FB90085116B /* CPTNumericData.h */,
+				DC90585E17CF7FB90085116B /* CPTNumericData+TypeConversion.h */,
+				DC90585F17CF7FB90085116B /* CPTNumericDataType.h */,
+				DC90586017CF7FB90085116B /* CPTPathExtensions.h */,
+				DC90586117CF7FB90085116B /* CPTPieChart.h */,
+				DC90586217CF7FB90085116B /* CPTPlatformSpecificCategories.h */,
+				DC90586317CF7FB90085116B /* CPTPlatformSpecificDefines.h */,
+				DC90586417CF7FB90085116B /* CPTPlatformSpecificFunctions.h */,
+				DC90586517CF7FB90085116B /* CPTPlot.h */,
+				DC90586617CF7FB90085116B /* CPTPlotArea.h */,
+				DC90586717CF7FB90085116B /* CPTPlotAreaFrame.h */,
+				DC90586817CF7FB90085116B /* CPTPlotGroup.h */,
+				DC90586917CF7FB90085116B /* CPTPlotRange.h */,
+				DC90586A17CF7FB90085116B /* CPTPlotSpace.h */,
+				DC90586B17CF7FB90085116B /* CPTPlotSpaceAnnotation.h */,
+				DC90586C17CF7FB90085116B /* CPTPlotSymbol.h */,
+				DC90586D17CF7FB90085116B /* CPTRangePlot.h */,
+				DC90586E17CF7FB90085116B /* CPTResponder.h */,
+				DC90586F17CF7FB90085116B /* CPTScatterPlot.h */,
+				DC90587017CF7FB90085116B /* CPTShadow.h */,
+				DC90587117CF7FB90085116B /* CPTTestCase.h */,
+				DC90587217CF7FB90085116B /* CPTTextLayer.h */,
+				DC90587317CF7FB90085116B /* CPTTextStyle.h */,
+				DC90587417CF7FB90085116B /* CPTTextStylePlatformSpecific.h */,
+				DC90587517CF7FB90085116B /* CPTTheme.h */,
+				DC90587617CF7FB90085116B /* CPTTimeFormatter.h */,
+				DC90587717CF7FB90085116B /* CPTTradingRangePlot.h */,
+				DC90587817CF7FB90085116B /* CPTUtilities.h */,
+				DC90587917CF7FB90085116B /* CPTXYAxis.h */,
+				DC90587A17CF7FB90085116B /* CPTXYAxisSet.h */,
+				DC90587B17CF7FB90085116B /* CPTXYGraph.h */,
+				DC90587C17CF7FB90085116B /* CPTXYPlotSpace.h */,
+				DC90587D17CF7FB90085116B /* mainpage.h */,
+				DC90587E17CF7FB90085116B /* NSCoderExtensions.h */,
+				DC90587F17CF7FB90085116B /* NSDecimalNumberExtensions.h */,
+				DC90588017CF7FB90085116B /* NSNumberExtensions.h */,
+			);
+			name = BarChart;
+			sourceTree = "<group>";
+		};
+		DC90588517CF82BD0085116B /* BarChartVC */ = {
+			isa = PBXGroup;
+			children = (
+				DC90588617CF82D00085116B /* OGSBarChart.h */,
+				DC90588717CF82D00085116B /* OGSBarChart.m */,
+				DC90588817CF82D00085116B /* OGSBarGraph.h */,
+				DC90588917CF82D00085116B /* OGSBarGraph.m */,
+				DC90588A17CF82D00085116B /* OGSGraphConstants.h */,
+				DC90588B17CF82D00085116B /* OGSGraphConstants.m */,
+				DC90588C17CF82D00085116B /* OGSGraphData.h */,
+				DC90588D17CF82D00085116B /* OGSGraphData.m */,
+				DC90588E17CF82D00085116B /* OGSSecondGraphData.h */,
+				DC90588F17CF82D00085116B /* OGSSecondGraphData.m */,
+			);
+			name = BarChartVC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0A376DC17C615CE0086B9CE /* OilAndGasSolution */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A3770017C615CE0086B9CE /* Build configuration list for PBXNativeTarget "OilAndGasSolution" */;
+			buildPhases = (
+				C0A376D917C615CE0086B9CE /* Sources */,
+				C0A376DA17C615CE0086B9CE /* Frameworks */,
+				C0A376DB17C615CE0086B9CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OilAndGasSolution;
+			productName = OilAndGasSolution;
+			productReference = C0A376DD17C615CE0086B9CE /* OilAndGasSolution.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0A376D517C615CD0086B9CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Infosys Limited";
+			};
+			buildConfigurationList = C0A376D817C615CD0086B9CE /* Build configuration list for PBXProject "OilAndGasSolution" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C0A376D417C615CD0086B9CE;
+			productRefGroup = C0A376DE17C615CE0086B9CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0A376DC17C615CE0086B9CE /* OilAndGasSolution */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0A376DB17C615CE0086B9CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A376EB17C615CE0086B9CE /* InfoPlist.strings in Resources */,
+				C0A376F317C615CE0086B9CE /* Default.png in Resources */,
+				C0A376F517C615CE0086B9CE /* Default@2x.png in Resources */,
+				C0A376F717C615CE0086B9CE /* Default-568h@2x.png in Resources */,
+				C0A3770C17C616D60086B9CE /* OGSHomeViewController.xib in Resources */,
+				C0A3771317C617280086B9CE /* OGSContactUsViewController.xib in Resources */,
+				C0A3771917C617490086B9CE /* OGSNewsListViewController.xib in Resources */,
+				C0A3772317C619010086B9CE /* Tab_Bar_Bg.png in Resources */,
+				C0A3772417C619010086B9CE /* Tab_Bar_Bg@2x.png in Resources */,
+				C0A3772617C61A380086B9CE /* Tab_home_icon.png in Resources */,
+				C0A3772C17C61A7B0086B9CE /* OGSLoginViewController.xib in Resources */,
+				C0A3773517C625630086B9CE /* Login1.png in Resources */,
+				C0A3773617C625630086B9CE /* Login2.png in Resources */,
+				C0A3773717C625630086B9CE /* Login3.png in Resources */,
+				C0A3773817C625630086B9CE /* Login4.png in Resources */,
+				C09DA88F17C77B7900ACB5DF /* OGSNewsDetailsViewController.xib in Resources */,
+				DC86435D17C783D60000D08B /* maps_logo.png in Resources */,
+				DC86435E17C783D60000D08B /* risk_logo.png in Resources */,
+				DC86436117C785600000D08B /* news_logo.png in Resources */,
+				DC86436217C785600000D08B /* report_logo.png in Resources */,
+				C09DA8AB17C79E3300ACB5DF /* NewsImage1.jpg in Resources */,
+				C09DA8AC17C79E3300ACB5DF /* NewsImage2.jpg in Resources */,
+				C09DA8AD17C79E3300ACB5DF /* NewsImage3.jpg in Resources */,
+				C09DA8AE17C79E3300ACB5DF /* NewsImage4.jpg in Resources */,
+				C09DA8AF17C79E3300ACB5DF /* NewsImage5.jpg in Resources */,
+				C09DA8B017C79E3300ACB5DF /* NewsImage6.jpg in Resources */,
+				C09DA8B117C79E3300ACB5DF /* NewsImage7.jpg in Resources */,
+				C09DA8B217C79E3300ACB5DF /* NewsImage8.jpg in Resources */,
+				C09DA8B317C79E3300ACB5DF /* NewsImage9.jpg in Resources */,
+				C039369117CB600A00ED58BC /* OGSSiteLocatorViewController.xib in Resources */,
+				265B6A3F17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.xib in Resources */,
+				C04EA69717CCE07300838CEA /* worldMap.jpg in Resources */,
+				DC03B39617CE177300C394C4 /* OGSReportsViewController.xib in Resources */,
+				DC03B39817CE179900C394C4 /* reload.png in Resources */,
+				DC03B39A17CE2BEC00C394C4 /* contact_us_logo.png in Resources */,
+				265C7AB417CF493D00859ADE /* OGSRiskVIewIncidentViewController.xib in Resources */,
+				265C7AC217CF89FE00859ADE /* emergency_exit_route - Mar12_.jpg in Resources */,
+				265C7AC417CF89FE00859ADE /* EscapeRoute.jpg in Resources */,
+				265C7AC517CF89FE00859ADE /* image6671.jpg in Resources */,
+				265C7ACA17D05D1E00859ADE /* images.jpg in Resources */,
+				C00D850617D48BFA00BFAFD0 /* OGSUserReportsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0A376D917C615CE0086B9CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A376ED17C615CE0086B9CE /* main.m in Sources */,
+				C0A376F117C615CE0086B9CE /* AppDelegate.m in Sources */,
+				C0A3770B17C616D60086B9CE /* OGSHomeViewController.m in Sources */,
+				C0A3771217C617280086B9CE /* OGSContactUsViewController.m in Sources */,
+				C0A3771817C617490086B9CE /* OGSNewsListViewController.m in Sources */,
+				C0A3772B17C61A7B0086B9CE /* OGSLoginViewController.m in Sources */,
+				C0A3773017C620ED0086B9CE /* OGSBusinessClass.m in Sources */,
+				C09DA88E17C77B7900ACB5DF /* OGSNewsDetailsViewController.m in Sources */,
+				C039369017CB600A00ED58BC /* OGSSiteLocatorViewController.m in Sources */,
+				265B6A3E17CB8CFE00BB8DDF /* OGSRiskManagementHomeViewController.m in Sources */,
+				C04EA69317CC6D7F00838CEA /* OGSOilAndGasSites.m in Sources */,
+				DC03B39517CE177300C394C4 /* OGSReportsViewController.m in Sources */,
+				265C7AB317CF493D00859ADE /* OGSRiskVIewIncidentViewController.m in Sources */,
+				DC90589017CF82D00085116B /* OGSBarChart.m in Sources */,
+				DC90589117CF82D00085116B /* OGSBarGraph.m in Sources */,
+				DC90589217CF82D00085116B /* OGSGraphConstants.m in Sources */,
+				DC90589317CF82D00085116B /* OGSGraphData.m in Sources */,
+				DC90589417CF82D00085116B /* OGSSecondGraphData.m in Sources */,
+				DC4DE45D17D1F5F6000B6860 /* OGSScatterPlot.m in Sources */,
+				C00D850517D48BFA00BFAFD0 /* OGSUserReportsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C0A376E917C615CE0086B9CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A376EA17C615CE0086B9CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0A376FE17C615CE0086B9CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C0A376FF17C615CE0086B9CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0A3770117C615CE0086B9CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OilAndGasSolution/OilAndGasSolution-Prefix.pch";
+				INFOPLIST_FILE = "OilAndGasSolution/OilAndGasSolution-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OilAndGasSolution/CorePlot\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C0A3770217C615CE0086B9CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OilAndGasSolution/OilAndGasSolution-Prefix.pch";
+				INFOPLIST_FILE = "OilAndGasSolution/OilAndGasSolution-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OilAndGasSolution/CorePlot\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0A376D817C615CD0086B9CE /* Build configuration list for PBXProject "OilAndGasSolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A376FE17C615CE0086B9CE /* Debug */,
+				C0A376FF17C615CE0086B9CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A3770017C615CE0086B9CE /* Build configuration list for PBXNativeTarget "OilAndGasSolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A3770117C615CE0086B9CE /* Debug */,
+				C0A3770217C615CE0086B9CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0A376D517C615CD0086B9CE /* Project object */;
+}

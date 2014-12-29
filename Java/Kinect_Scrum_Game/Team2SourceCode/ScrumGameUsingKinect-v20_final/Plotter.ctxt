@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=width\ height\ startMax\ world\ class1\ class2
+comment0.target=Plotter(int,\ int,\ int,\ greenfoot.World,\ java.lang.Class,\ java.lang.Class)
+comment0.text=\r\n\ Constructor.\r\n\ \r\n\ @param\ width\ The\ width\ of\ the\ plotter\ window\ (in\ pixles).\r\n\ @param\ height\ The\ height\ of\ the\ plotter\ window\ (in\ pixles).\r\n\ @param\ startMax\ The\ initial\ maximum\ value\ for\ the\ y\ axis.\r\n\ @param\ world\ The\ world\ object.\r\n\ @param\ class1\ The\ first\ class\ to\ be\ plotted.\r\n\ @param\ width\ The\ second\ class\ to\ be\ plotted.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Update\ the\ plotter\ graph.\r\n
+comment2.params=
+comment2.target=void\ updateGraph()
+comment2.text=\r\n\ Update\ the\ graph\ component\ in\ our\ window\ with\ the\ current\ object\r\n\ counts\ for\ the\ two\ monitored\ classes.\r\n\ Stop\ the\ simulation\ if\ any\ one\ of\ them\ drops\ to\ zero.\r\n
+comment3.params=width\ height\ startMax
+comment3.target=javax.swing.JFrame\ makeFrame(int,\ int,\ int)
+comment3.text=\r\n\ Prepare\ the\ frame\ for\ the\ graph\ display.\r\n
+numComments=4

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=Button(java.lang.String)
+comment0.text=\r\n\ \ \ \ public\ Button\ (String\ text,\ int\ target)\ {\ \r\n\ \ \ \ this.target\ \=\ target;\ \r\n\ \ \ \ GreenfootImage\ image\ \=\ new\ GreenfootImage(\ 120,\ 30);\ \r\n\ \ \ \ image.clear();\ \ \r\n\ \ \ \ image.setColor(new\ Color(34,100,68));\ \ \r\n\ \ \ \ image.fill();\ \ \r\n\ \ \ \ GreenfootImage\ numImage\ \=\ new\ GreenfootImage(text,\ 24,\ Color.WHITE,\ new\ Color(34,100,68));\ \ \r\n\ \ \ \ image.drawImage(numImage,\ 10,\ 15\ -\ numImage.getHeight()\ /\ 2);\r\n\ \ \ \ setImage(image);\ \ \ \ \ \ \ \ \r\n\ \ \ \ }act(\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=cmd
+comment2.target=void\ setCommand(Command)
+comment3.params=
+comment3.target=void\ invoke()
+numComments=4

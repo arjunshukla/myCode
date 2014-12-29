@@ -1,0 +1,388 @@
+//
+//  OGSRiskManagementHomeViewController.m
+//  OilAndGasSolution
+//
+//  Created by Nithin_abraham on 26/08/13.
+
+
+#import "OGSRiskManagementHomeViewController.h"
+#import "OGSRiskVIewIncidentViewController.h"
+@interface OGSRiskManagementHomeViewController () {
+    UITextField *activeTextField;
+    NSArray *newsHeadlinesList;
+    NSString *news;
+    UIPopoverController *newsPopOver;
+    
+}
+
+@end
+
+@implementation OGSRiskManagementHomeViewController
+@synthesize reportIncidentArray,wellNamesArray,pickerViewHeading,wellType,newsTextView,headlinesTableView,mapLocationTextField,mapTypeTextField,mapsImage;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.reportIncView.hidden = YES;
+    self.viewPicker.hidden = YES;
+    self.safetyMapsView.hidden=YES;
+    self.safetyMeasuresView.hidden = YES;
+    
+    newsHeadlinesList = [[NSArray alloc] initWithObjects:@"Death Accident",@"Fire Accident",@"Incidents involving Injury",@"Oil/Gas Drilling accidents",@"Materials handling accidents",@"Oil Spill accident",nil];
+    
+    UIBarButtonItem *newsListBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"News"
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self action:@selector(newsClicked:)];
+    UIImage *approveImg=[UIImage imageNamed:@"Tab_home_icon.png"];
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    UIBarButtonItem *viewInc = [[UIBarButtonItem alloc] initWithImage:approveImg style:UIBarButtonItemStylePlain target:self action:@selector(onViewIncClick)];
+    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *reportInc = [[UIBarButtonItem alloc] initWithImage:approveImg style:UIBarButtonItemStylePlain target:self action:@selector(onReportIncClick)];
+    UIBarButtonItem *safetyMaps = [[UIBarButtonItem alloc] initWithImage:approveImg style:UIBarButtonItemStylePlain target:self action:@selector(onSafetyMapsClick)];
+    UIBarButtonItem *safetyMeausures = [[UIBarButtonItem alloc] initWithImage:approveImg style:UIBarButtonItemStylePlain target:self action:@selector(onSafetyMeasuresClick)];
+    
+    [self setToolbarItems:[NSArray arrayWithObjects:flex,viewInc,flex,reportInc,flex,safetyMaps,flex,safetyMeausures,flex,nil] animated:YES];
+    self.reportIncView.hidden=YES;
+	self.pickerIncidentType.hidden = YES;
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:newsListBarBtn, nil];
+    
+    
+}
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    self.reportIncView.hidden = YES;
+//    self.viewPicker.hidden = YES;
+//    self.safetyMapsView.hidden=YES;
+//    self.safetyMeasuresView.hidden = YES;
+//    OGSRiskVIewIncidentViewController *riskIncidentVC = [[OGSRiskVIewIncidentViewController alloc]initWithNibName:@"OGSRiskVIewIncidentViewController" bundle:nil];
+//    [self.navigationController pushViewController:riskIncidentVC animated:YES];
+//    [self.view addSubview:riskIncidentVC.view];
+
+    if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    }
+    else {
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
+        self.newsTextView.frame = CGRectMake(10, 75, 740, 800);
+        self.headlinesTableView.hidden = YES;
+    }
+    [self.headlinesTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    [self showNewsDetails:0];
+    
+}
+- (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [newsHeadlinesList count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    cell.imageView.image = [UIImage imageNamed:@"newsListing_Cell.png"];
+    if (indexPath.row%2==0) {
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    cell.textLabel.text = [newsHeadlinesList objectAtIndex:indexPath.row];
+    [cell.textLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:15.0f]];
+    cell.textLabel.numberOfLines = 2;
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
+    [self showNewsDetails:indexPath.row];
+    [newsPopOver dismissPopoverAnimated:YES];
+}
+-(void)showNewsDetails:(int)index {
+    switch (index) {
+        case 0:
+            news = @"What to do\n\n \tIn the event of a fire, remember time is the biggest enemy and every second counts, follow the following tips:\n\nEscape first, then call for help. \nMake sure everyone in the family knows two ways to escape from every room.\nPlan two exit from the room\nPractice feeling your way out with your eyes closed.\nPractice feeling your way out with your eyes closed.\nKeep escape routs clear.\nWhen you come to a closed door, use the back of your hand to feel the top of the door, the doorknob, and the crack between the door and door frame to make sure that fire is not on the other side. If it feels hot, use your secondary escape route. Even if the door feels cool, open it carefully. Brace your shoulder against the door and open it slowly. If heat and smoke come in, slam the door and make sure it is securely closed, then use your alternate escape route. \nLook for combustible liquids like gasoline, lighter fluid, and paint thinner that may have spilled. Thoroughly clean the spill and place containers in a well-ventilated area.\nKeep combustible liquids away from heat sources.\nIf your home has sustained flood or water damage, and you can safely get to the main breaker or fuse box, turn off the power.\nAssume all wires on the ground are electrically charged. This includes cable TV feeds.\nUse the appropriate sized and type power cords to carry the electric load. Overloaded cords can overheat and cause fires\nBeaware of and avoid downed utility lines. Report downed or damaged power lines to the utility company or emergency services.\nRemove standing water, wet carpets and furnishings. Air dry your home with good ventilation before restoring power.\nHave a licensed electrician check your home for damage.\nSmell and listen for leaky gas connections. If you believe there is a gas leak, immediately leave the house and leave the door(s) open.\n Never strike a match or operate electrical switch Any size flame can spark an explosion.\nBefore turning the gas back on, have the gas system checked by a professional.\nFollow the manufacturer's instructions and guidelines when using generators.\nUse a generator or other fuel-powered machines outside the home. CO fumes are odorless and can quickly overwhelm you indoors.\nIf there is a fire hydrant near your home, keep it clear of debris for easy access by the fire department.\nIf there is a fire hydrant near your home, keep it clear of debris for easy access by the fire department.\nLearn operation of firefighting equipment installed in your premises.\n\nWhat NOT to do.\n\nNever stand up in a fire, always crawl low under the smoke and try to keep your mouth covered. Never return to a burning building for any reason; it may cost you your life.\nNever go back into a burning building for any reason. Teach children not to hide from firefighters. If someone is missing, tell the firefighters. They are equipped to perform rescues safely.\nDo not secure open fire/smoke check door open as they limit the spread of fire/smoke when in closed position\nNever run cords under rugs or carpets where heat might build up or damage to a cord may go unnoticed.\nNever connect generators to another power source such as power lines. There verse flow of electricity or can electrocute an unsuspecting utility worker.\nNever overload electrical circuits by using multi-plug\nDo not wear loose and synthetic clothing while working with gas burner/electric heater.\nDo not forget to turn-off gas cylinder before going to bed.\nDo not park your vehicle or store any item to obstruct the access to fire fighting facilities provided in your premises.\nDo not hide any information concerning hazards in the premises make them known to all.\nDo not race with fire fighting or any other emergency vehicle and give them way to reach faster to the scene of accident. \nDo not temper with firefighting equipment in your premises.\nDo not crowd the fire accident site as it may hamper fire fighting and rescue operations.\nDo not ever hesitate to call the Fire Service in times of emergency however minor that may be.   ";
+            break;
+        case 1:
+            news = @"What to do\n\n \tIn the event of a fire, remember time is the biggest enemy and every second counts, follow the following tips:\n\nEscape first, then call for help. \nMake sure everyone in the family knows two ways to escape from every room.\nPlan two exit from the room\nPractice feeling your way out with your eyes closed.\nPractice feeling your way out with your eyes closed.\nKeep escape routs clear.\nWhen you come to a closed door, use the back of your hand to feel the top of the door, the doorknob, and the crack between the door and door frame to make sure that fire is not on the other side. If it feels hot, use your secondary escape route. Even if the door feels cool, open it carefully. Brace your shoulder against the door and open it slowly. If heat and smoke come in, slam the door and make sure it is securely closed, then use your alternate escape route. \nLook for combustible liquids like gasoline, lighter fluid, and paint thinner that may have spilled. Thoroughly clean the spill and place containers in a well-ventilated area.\nKeep combustible liquids away from heat sources.\nIf your home has sustained flood or water damage, and you can safely get to the main breaker or fuse box, turn off the power.\nAssume all wires on the ground are electrically charged. This includes cable TV feeds.\nUse the appropriate sized and type power cords to carry the electric load. Overloaded cords can overheat and cause fires\nBeaware of and avoid downed utility lines. Report downed or damaged power lines to the utility company or emergency services.\nRemove standing water, wet carpets and furnishings. Air dry your home with good ventilation before restoring power.\nHave a licensed electrician check your home for damage.\nSmell and listen for leaky gas connections. If you believe there is a gas leak, immediately leave the house and leave the door(s) open.\n Never strike a match or operate electrical switch Any size flame can spark an explosion.\nBefore turning the gas back on, have the gas system checked by a professional.\nFollow the manufacturer's instructions and guidelines when using generators.\nUse a generator or other fuel-powered machines outside the home. CO fumes are odorless and can quickly overwhelm you indoors.\nIf there is a fire hydrant near your home, keep it clear of debris for easy access by the fire department.\nIf there is a fire hydrant near your home, keep it clear of debris for easy access by the fire department.\nLearn operation of firefighting equipment installed in your premises.\n\nWhat NOT to do.\n\nNever stand up in a fire, always crawl low under the smoke and try to keep your mouth covered. Never return to a burning building for any reason; it may cost you your life.\nNever go back into a burning building for any reason. Teach children not to hide from firefighters. If someone is missing, tell the firefighters. They are equipped to perform rescues safely.\nDo not secure open fire/smoke check door open as they limit the spread of fire/smoke when in closed position\nNever run cords under rugs or carpets where heat might build up or damage to a cord may go unnoticed.\nNever connect generators to another power source such as power lines. There verse flow of electricity or can electrocute an unsuspecting utility worker.\nNever overload electrical circuits by using multi-plug\nDo not wear loose and synthetic clothing while working with gas burner/electric heater.\nDo not forget to turn-off gas cylinder before going to bed.\nDo not park your vehicle or store any item to obstruct the access to fire fighting facilities provided in your premises.\nDo not hide any information concerning hazards in the premises make them known to all.\nDo not race with fire fighting or any other emergency vehicle and give them way to reach faster to the scene of accident. \nDo not temper with firefighting equipment in your premises.\nDo not crowd the fire accident site as it may hamper fire fighting and rescue operations.\nDo not ever hesitate to call the Fire Service in times of emergency however minor that may be.   ";
+            break;
+        case 2:
+            news = @"Do's\n\n General - immediate reproting and treatment; follow-up reporting; cause investigation and prevention\nMedical services - Information availabe and arrangements made\nFirst Aid - CPR trained individuals and first aid kit at worksite\nEmergency eye or body wash stations when exposed to injurious materials\nPPE should only be used when engineering or administrative contrlas are impractical\nEach person shoudl wear a hard hat\nEye protection where probable injury\nGloves,apron,boots,other appropriate PPE for chemical handling\n\nDont's\nNo loose or poorly fitted clothing\nNever work in clothing saturated wiht flammable,hazardous or irritating substances\n";
+            break;
+        case 3:
+            news = @"Do's\nStore combustible and flammable materials safely\nChange rooms in safe areas for smoking\nPotenital ignition sources located at safe distance from wellhead or flammable leakage areas.\nOnly safely-designed heaters near rig floor,substructure, or cellar.\nStore Oil waste in covered metal containers.\nConductive containers (e.g metal) to handle,store, transport flammable liquids.\nFire fighting water equipment may be used for wash down if capacity is not comprimised\n\nDont's\nNo smoking,or source of ignition, near operatons that could cause fire hazard\nDo not allow oil and gas accumulations\n ";
+            break;
+        case 4:
+            news = @"Do's\n\nSize up the load that you are about to lift and get help if necessary.\nIn lifting,keep your back as nearly straight and vertical as possible, bend the knees, and do the lifting with the leg and thigh muscles.\nBe sure you have a secure grip on whatever you are going to lift or carry.\nParticular care must be ecercised when doing group lifting or carrying to avoid injury.\nOne man or woman in the group should give signals so that everyone will work in unison\nWhen pipe is lifted, lowered and carried, teamwork is essential. Pipe should be lifted and lowered at a given signal.\nYou should roll pipe, make sure taht skids are securely fastened.";
+            break;
+        case 5:
+            news = @"Do's\n\nA device to accurately measure the volume of mud required to keep the well filled at all times.\nA gas detector or explosimeter at the primary shale shaker and connected to adutble or visual alarm near teh driller stand.\nBlowout prevention drill shall be carried out once every week during drilling.\nSuitable control valves shall be kept availabe near the well which can be used in case of emergency to control the well.\nWhen running in or pulling out tubing, gate valve and tubing hanger shall be pre-assembled and kept readily availbae at the well.";
+            break;
+            
+        default:
+            break;
+    }
+    self.newsTextView.text = news;
+    
+    
+}
+-(void)newsClicked:(id)sender {
+    [self showNewsPopOver];
+}
+-(void)showNewsPopOver {
+    
+    //[newsListViewController.view setFrame:CGRectMake(0, 0, self.headlinesTableView.frame.size.width, self.headlinesTableView.frame.size.height)];
+    if(!newsPopOver)
+    {
+        UIViewController *newsListViewController = [[UIViewController alloc] init];
+        UIView *newsListView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 575)];
+        self.headlinesTableView.frame = CGRectMake(0, 0, 300, 575);
+        [newsListView addSubview:self.headlinesTableView];
+        [newsListViewController.view addSubview:newsListView];
+        newsPopOver = [[UIPopoverController alloc] initWithContentViewController:newsListViewController];
+        [newsPopOver setPopoverContentSize:newsListView.frame.size];
+    }
+    self.headlinesTableView.hidden = NO;
+    [newsPopOver presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    
+}
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    if (UIInterfaceOrientationIsLandscape(fromInterfaceOrientation)) {
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
+        self.newsTextView.frame = CGRectMake(10, 75, 740, 800);
+        self.headlinesTableView.hidden = YES;
+    }
+    else {
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+        if ([newsPopOver isPopoverVisible]) {
+            [newsPopOver dismissPopoverAnimated:YES];
+        }
+        newsPopOver = nil;
+        self.headlinesTableView.hidden = NO;
+        [self.view addSubview:self.headlinesTableView];
+        self.headlinesTableView.frame = CGRectMake(10, 75, 300, 575);
+        self.newsTextView.frame = CGRectMake(312, 75, 695, 575);
+    }
+}
+
+-(void)onViewIncClick
+{
+    NSLog(@"1");
+    self.reportIncView.hidden = YES;
+    self.viewPicker.hidden = YES;
+    self.safetyMapsView.hidden=YES;
+    self.safetyMeasuresView.hidden = YES;
+    OGSRiskVIewIncidentViewController *riskIncidentVC = [[OGSRiskVIewIncidentViewController alloc]initWithNibName:@"OGSRiskVIewIncidentViewController" bundle:nil];
+    [self.navigationController pushViewController:riskIncidentVC animated:YES];
+}
+-(void)onReportIncClick
+{
+    NSLog(@"2");
+    self.reportIncView.hidden = NO;
+    self.viewPicker.hidden = YES;
+    self.safetyMapsView.hidden=YES;
+    self.safetyMeasuresView.hidden = YES;
+    self.reportIncView.hidden=NO;
+    self.headlinesTableView.hidden = YES;
+    [self.view bringSubviewToFront:self.reportIncView];
+    
+}
+-(void)onSafetyMapsClick
+{
+    NSLog(@"3");
+    self.reportIncView.hidden = YES;
+    self.viewPicker.hidden = YES;
+    self.safetyMapsView.hidden=NO;
+    self.safetyMeasuresView.hidden = YES;
+    self.headlinesTableView.hidden = YES;
+    self.safetyMapsView.frame =CGRectMake(self.view.frame.origin.x+10, self.view.frame.origin.y+120,self.view.frame.size.width-20,self.view.frame.size.height-120);
+    self.mapsImage=[[UIImageView alloc]initWithFrame:CGRectMake(self.safetyMapsView.frame.origin.x, self.safetyMapsView.frame.origin.y+40, self.safetyMapsView.frame.size.width-50, self.safetyMapsView.frame.size.height-300)];
+    //    mapsImage.image = [UIImage imageNamed:@"motörhead1.jpg"];
+    //   [mapsImage setBackgroundColor:[UIColor greenColor]];
+    
+    [self.view addSubview:self.safetyMapsView];
+    [self.view bringSubviewToFront:self.safetyMapsView];
+    
+    
+    
+    
+}
+-(void)onSafetyMeasuresClick
+{
+    NSLog(@"4");
+    self.reportIncView.hidden = YES;
+    self.viewPicker.hidden = YES;
+    self.safetyMapsView.hidden=YES;
+    self.safetyMeasuresView.hidden = NO;
+    //    self.safetyMeasuresView.frame =CGRectMake(self.view.frame.origin.x+10, self.view.frame.origin.y+10,self.view.frame.size.width-20,self.view.frame.size.height-20);
+    [self.view addSubview:self.safetyMeasuresView];
+    [self.view bringSubviewToFront:self.safetyMeasuresView];
+    
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    [super viewDidAppear:animated];
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btnPicker:(id)sender
+{
+    
+    self.viewPicker.alpha = 0.0;
+    
+    [UIView animateWithDuration:1.0 animations:^
+     {
+         self.viewPicker.alpha = 0.8;
+     }];
+    
+    self.viewPicker.frame = CGRectMake(self.view.frame.origin.x+10, self.view.frame.origin.y+10,self.view.frame.size.width-20,self.view.frame.size.height-20);
+    [self.view addSubview:self.viewPicker];
+    [self.pickerIncidentType reloadAllComponents];
+    self.viewPicker.hidden = NO;
+}
+#pragma mark -
+#pragma mark PickerView DataSource
+
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
+{
+    return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return [reportIncidentArray count];
+    
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{     return [reportIncidentArray objectAtIndex:row];
+}
+
+#pragma mark -
+#pragma mark PickerView Delegate
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component {
+    if ([activeTextField isEqual:self.incidentTypeTextField]) {
+        self.incidentTypeTextField.text = [reportIncidentArray objectAtIndex:row];
+    }
+    else if([activeTextField isEqual:self.welltypeTextField]) {
+        self.welltypeTextField.text = [reportIncidentArray objectAtIndex:row];
+    }
+    else if([activeTextField isEqual:self.wellNameTextField])
+    {
+        self.wellNameTextField.text = [reportIncidentArray objectAtIndex:row];
+    }
+    else if([activeTextField isEqual:mapLocationTextField])
+    {
+        self.mapLocationTextField.text = [reportIncidentArray objectAtIndex:row];
+    }
+    else if ([activeTextField isEqual:mapTypeTextField])
+    {
+        self.mapTypeTextField.text = [reportIncidentArray objectAtIndex:row];
+    }
+    if ([mapLocationTextField.text isEqual:@"Refinery"]) {
+        self.mapsImage.image= [UIImage imageNamed:@"emergency_exit_route - Mar12_.jpg"];
+        
+    }
+    else if ([mapLocationTextField.text isEqual:@"Storage Area"])
+    {
+        self.mapsImage.image= [UIImage imageNamed:@"image6671.jpg"];
+    }
+    if ([mapTypeTextField.text isEqual:@"Fire Extinguisher"])
+    {
+        self.mapsImage.image= [UIImage imageNamed:@"EscapeRoute.jpg"];
+    }
+    if ([mapTypeTextField.text isEqual:@"Exit Route"])
+    {
+        self.mapsImage.image= [UIImage imageNamed:@"images.jpg"];
+    }
+    [self.safetyMapsView addSubview:mapsImage];
+    [self.safetyMeasuresView bringSubviewToFront:mapsImage];
+    [self.view addSubview:self.safetyMapsView];
+    [self.view bringSubviewToFront:self.safetyMapsView];
+    self.viewPicker.hidden = YES;
+}
+#pragma mark-TextField methods
+
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    activeTextField = textField;
+    self.pickerIncidentType.hidden=NO;
+    if (reportIncidentArray) {
+        reportIncidentArray = nil;
+    }
+    if([textField isEqual:self.incidentTypeTextField]) {
+        [self btnPicker:self];
+        
+        reportIncidentArray =[[NSMutableArray alloc]initWithObjects:@"Death Accident",@"Fire Accident",@"Incidents involving Injury",@"Oil/Gas Drilling accidents",@"Materials handling accidents",@"Oil Spill accident",@"Zombie Apocalypse incident", @"Tsunami Incident",@"Giant Squid attack",@"Snakes on a Ship",@"Pirate Attack",nil];
+        self.pickerViewHeading.text = @"Select Incident Type";
+    }
+    else if([textField isEqual:self.welltypeTextField]){
+        
+        [self btnPicker:self];
+        reportIncidentArray =[[NSMutableArray alloc]initWithObjects:@"Blackhawk",@"Turismo",@"Ezalor",@"Synderen",@"DarkSoul",@"BrightNine", nil];
+        self.pickerViewHeading.text = @"Select Well Name";
+        
+    }
+    else if([textField isEqual:self.wellNameTextField])
+    {
+        [self btnPicker:self];
+        reportIncidentArray =[[NSMutableArray alloc]initWithObjects:@"Oil",@"Gas",@"Oil/Gas", nil];
+        self.pickerViewHeading.text = @"Select Well Type";
+    }
+    else if([activeTextField isEqual:mapLocationTextField])
+    {
+        [self btnPicker:self];
+        reportIncidentArray =[[NSMutableArray alloc]initWithObjects:@"Refinery",@"Storage Area", nil];
+        self.pickerViewHeading.text = @"Select Well Type";
+    }
+    else if ([activeTextField isEqual:mapTypeTextField])
+    {
+        [self btnPicker:self];
+        reportIncidentArray =[[NSMutableArray alloc]initWithObjects:@"Fire Extinguisher",@"Exit Route", nil];
+        self.pickerViewHeading.text = @"Select Well Type";
+    }
+    
+    [self.pickerIncidentType reloadAllComponents];
+    return NO;
+}
+
+- (IBAction)btnDiscard:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Do you want to discard the Incident Report?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Discard", nil];
+    [alert show];
+    
+    
+    
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0) {
+        //Do something
+        NSLog(@"Cancel");
+    } else if (buttonIndex == 1) {
+        //Do something else
+        NSLog(@"OK");
+        self.incidentTypeTextField.text = NULL;
+        self.welltypeTextField.text= NULL;
+        self.wellNameTextField.text = NULL;
+        self.datetimeTextField.text = NULL;
+        self.locationTextField.text=NULL;
+        
+    }
+}
+
+@end

@@ -1,0 +1,19 @@
+//
+//  OGSBusinessClass.h
+//  OilAndGasSolution
+//
+//  Created by Sripad Mirajkar on 22/08/13.
+//  Copyright (c) 2013 Infosys Limited. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface OGSBusinessClass : NSObject
+
+@property (nonatomic, strong) NSString *userType;
+@property (nonatomic, assign) BOOL isLoggedIn;
+@property (nonatomic, strong) NSArray *sitesList;
+
++(OGSBusinessClass *) sharedInstance;
+
+@end

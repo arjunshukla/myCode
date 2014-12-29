@@ -1,0 +1,334 @@
+//
+//  OGSHomeViewController.m
+//  OilAndGasSolution
+//
+
+
+#import "OGSHomeViewController.h"
+#import "OGSReportsViewController.h"
+#import "OGSContactUsViewController.h"
+#import "OGSRiskManagementHomeViewController.h"
+#import "OGSBusinessClass.h"
+#import "OGSLoginViewController.h"
+#import "OGSSiteLocatorViewController.h"
+#import "OGSNewsListViewController.h"
+#import "OGSUserReportsViewController.h"
+#import "OGSOilAndGasSites.h"
+
+@interface OGSHomeViewController ()
+{
+    NSArray *newsListImages;
+    NSArray *newsHeadlinesList;
+    NSTimer *newsFlasher;
+    int index;
+}
+@end
+
+@implementation OGSHomeViewController
+@synthesize newsFlashHeadline,newsFlashView,newsFlashImage,newsTableView;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = @"Home";
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    if (![OGSBusinessClass sharedInstance].isLoggedIn) {
+        OGSLoginViewController *loginVC = [[OGSLoginViewController alloc] initWithNibName:@"OGSLoginViewController" bundle:nil];
+        loginVC.loginDelegate = self;
+        [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+    }
+    self.newsTableView.layer.cornerRadius = 5.0f;
+    self.newsTableView.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.newsTableView.layer.borderWidth = 2.0f;
+    // Do any additional setup after loading the view from its nib.
+    newsListImages = [[NSArray alloc] initWithObjects:@"NewsImage1.jpg",@"NewsImage2.jpg",@"NewsImage3.jpg",@"NewsImage4.jpg",@"NewsImage5.jpg",@"NewsImage6.jpg",@"NewsImage7.jpg",@"NewsImage8.jpg",@"NewsImage9.jpg", nil];
+    newsHeadlinesList = [[NSArray alloc] initWithObjects:@"Sensex rebounds over 400 points; metals, oil and gas stocks gain",@"A scandal at the regulator does a crucial sector no favours",@"Record investment in oil and gas recorded but industry faces sharp",@"Unfair Share: How Oil and Gas Drillers Avoid Paying Royalties",@"Senate energy committee calls for rail safety review in oil and gas",@"Suing oil and gas interests to save the coast: author John Barry weighs in",@"Domestic drilling's down side: Fatalities up in oil and gas industry",@"US Lags Behind UK on Mining, Oil and Gas Transparency",@"RIL may not take part in future oil and gas auctions", nil];
+}
+-(void)viewWillDisappear:(BOOL)animated {
+    [newsFlasher invalidate];
+    [super viewWillDisappear:animated];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (![OGSBusinessClass sharedInstance].sitesList) {
+        if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"sitesList"] count] == 0) {
+             [self saveData];
+        }
+    }
+    if([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft  || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        self.newsFlashView.hidden = NO;
+        self.newsTableView.hidden = YES;
+        self.welcomeLabel.frame = CGRectMake(767, 48, 196, 37);
+        self.lblNews.frame = CGRectMake(800, 150, 130, 21);
+        index = 0;
+    }
+    else
+    {
+        self.newsFlashView.hidden = YES;
+        self.newsTableView.hidden = NO;
+        self.welcomeLabel.frame = CGRectMake(531, 56, 196, 37);
+        self.lblNews.frame = CGRectMake(319, 600, 130, 21);
+        self.newsTableView.frame = CGRectMake(44, 650, 681, 180);
+    }
+    index = 0;
+    newsFlasher = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(flashNews) userInfo:nil repeats:YES];
+}
+-(void)flashNews {
+    [UIView transitionWithView: self.newsFlashImage
+                      duration:0.2f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.newsFlashImage.image = [UIImage imageNamed:[newsListImages objectAtIndex:(index)]];
+                        self.newsFlashHeadline.text = [newsHeadlinesList objectAtIndex:index];
+                        
+                    } completion:NULL];
+    [UIView transitionWithView: self.newsTableView
+                      duration:0.2f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        [self.newsTableView reloadData];
+                    } completion:NULL];
+    
+    if (index<8) {
+        index++;
+    }
+    else {
+        index = 0;
+    }
+}
+-(void)loggedInStatus; {
+    NSString *barBtnTitle = @"";
+    if ([OGSBusinessClass sharedInstance].isLoggedIn) {
+        self.welcomeLabel.text = [NSString stringWithFormat:@"Welcome, %@",[[OGSBusinessClass sharedInstance].userType uppercaseString]];
+        barBtnTitle = @"Log Out";
+    }
+    else {
+        self.welcomeLabel.text = [NSString stringWithFormat:@"Welcome, Guest.\n Please log in for full access"];
+        barBtnTitle = @"Log In";
+    }
+    UIBarButtonItem *logOutBtn = [[UIBarButtonItem alloc] initWithTitle:barBtnTitle style:UIBarButtonItemStyleBordered target:self action:@selector(logOut)];
+    self.navigationItem.leftBarButtonItem = logOutBtn;
+}
+-(void)logOut {
+    if ([OGSBusinessClass sharedInstance].isLoggedIn) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log Out" message:@"Do you want to log out?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        [alert show];
+    }
+    else {
+        OGSLoginViewController *loginVC = [[OGSLoginViewController alloc] initWithNibName:@"OGSLoginViewController" bundle:nil];
+        loginVC.loginDelegate = self;
+        [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+    }
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        if (alertView.tag == 1) {
+            OGSLoginViewController *loginVC = [[OGSLoginViewController alloc] initWithNibName:@"OGSLoginViewController" bundle:nil];
+            loginVC.loginDelegate = self;
+            [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+        }
+        else {
+            self.welcomeLabel.text = [NSString stringWithFormat:@"Welcome, Guest"];
+            [OGSBusinessClass sharedInstance].isLoggedIn = NO;
+            self.navigationItem.leftBarButtonItem.title = @"Log In";
+        }
+    }
+}
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    if([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft  || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        self.welcomeLabel.frame = CGRectMake(767, 48, 196, 37);
+        self.lblNews.frame = CGRectMake(800, 150, 130, 21);
+        self.newsTableView.hidden = YES;
+        self.newsFlashView.hidden = NO;
+        [newsFlasher invalidate];
+        newsFlasher = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(flashNews) userInfo:nil repeats:YES];
+    }
+    else
+    {
+        self.newsTableView.hidden = NO;
+        self.newsFlashView.hidden = YES;
+        self.welcomeLabel.frame = CGRectMake(531, 56, 196, 37);
+        self.lblNews.frame = CGRectMake(319, 600, 130, 21);
+        self.newsTableView.frame = CGRectMake(44, 650, 681, 180);
+    }
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+-(void)showLogInAlert:(NSString *)clickedFeature {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In" message:[NSString stringWithFormat:@"Please log in to check out the %@ feature",clickedFeature] delegate:self cancelButtonTitle:@"I don't want to log in" otherButtonTitles:@"Log In", nil];
+    alert.tag = 1;
+    [alert show];
+}
+- (IBAction)btnNews:(id)sender {
+    // [self showLogInAlert:@"News"];
+    OGSNewsListViewController *newsVC = [[OGSNewsListViewController alloc] initWithNibName:@"OGSNewsListViewController" bundle:nil];
+    [self.navigationController pushViewController:newsVC animated:YES];
+}
+
+- (IBAction)btnMaps:(id)sender {
+    if (![OGSBusinessClass sharedInstance].isLoggedIn) {
+        [self showLogInAlert:@"Site Locator"];
+    }
+    else {
+        OGSSiteLocatorViewController *siteLocVC = [[OGSSiteLocatorViewController alloc] initWithNibName:@"OGSSiteLocatorViewController" bundle:nil];
+        [self.navigationController pushViewController:siteLocVC animated:YES];
+    }
+}
+
+- (IBAction)btnContactUs:(id)sender
+{
+    OGSContactUsViewController *objContact = [[OGSContactUsViewController alloc] initWithNibName:@"OGSContactUsViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:objContact animated:YES];
+}
+
+- (IBAction)btnRiskMngmnt:(id)sender {
+    OGSRiskManagementHomeViewController *riskManHome = [[OGSRiskManagementHomeViewController alloc]initWithNibName:@"OGSRiskManagementHomeViewController" bundle:nil];
+    //[self presentViewController:riskManHome animated:YES completion:nil];
+    [self.navigationController pushViewController:riskManHome animated:YES];
+}
+- (IBAction)btnReports:(id)sender
+{
+    if (![OGSBusinessClass sharedInstance].isLoggedIn) {
+        [self showLogInAlert:@"Reports"];
+    }
+    else {
+        if ([[OGSBusinessClass sharedInstance].userType isEqualToString:@"user"]) {
+            OGSUserReportsViewController *userReportsVC = [[OGSUserReportsViewController alloc] initWithNibName:@"OGSUserReportsViewController" bundle:nil];
+            [self.navigationController pushViewController:userReportsVC animated:YES];
+        }
+        else {
+            OGSReportsViewController *objReports = [[OGSReportsViewController alloc] initWithNibName:@"OGSReportsViewController" bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:objReports animated:YES];
+        }
+    }
+}
+
+- (IBAction)newsClicked:(id)sender {
+    [newsFlasher invalidate];
+    [self navigateToNewsWithIndex:index];
+}
+-(void)navigateToNewsWithIndex:(int)newsId {
+    OGSNewsListViewController *newsVC = [[OGSNewsListViewController alloc] initWithNibName:@"OGSNewsListViewController" bundle:nil];
+    newsVC.selectedNewsId = [NSNumber numberWithInt:newsId];
+    [self.navigationController pushViewController:newsVC animated:YES];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    for (UIView *view in [cell.contentView subviews]) {
+        [view removeFromSuperview];
+    }
+    UIView *backGrndView = [[UIView alloc] initWithFrame:cell.contentView.frame];
+    backGrndView.backgroundColor = [UIColor clearColor];
+    UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 50, 50)];
+    imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"NewsImage%d.jpg",(indexPath.row+(index%3)*3+1)]];
+    [backGrndView addSubview:imgView];
+    UILabel *headline = [[UILabel alloc] initWithFrame:CGRectMake(60, 5, backGrndView.frame.size.width-70, 50)];
+    headline.textColor = [UIColor whiteColor];
+    headline.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0f];
+    headline.numberOfLines = 2;
+    headline.backgroundColor = [UIColor clearColor];
+    headline.text = [newsHeadlinesList objectAtIndex:indexPath.row+(index%3)*3];
+    [backGrndView addSubview:headline];
+    [cell.contentView addSubview:backGrndView];
+    /* cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"NewsImage%d.jpg",(indexPath.row+(index%3)*3+1)]];
+     cell.imageView.frame = CGRectMake(5, 5, 45, 40);
+     if (indexPath.row%2==0) {
+     cell.backgroundColor = [UIColor clearColor];
+     }
+     cell.textLabel.text = [newsHeadlinesList objectAtIndex:indexPath.row+(index%3)*3];
+     [cell.textLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:15.0f]];
+     cell.textLabel.numberOfLines = 2;*/
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [newsFlasher invalidate];
+    [self navigateToNewsWithIndex:(indexPath.row+(index%3)*3)];
+}
+-(void)saveData {
+    NSArray *latArray = [[NSArray alloc] initWithObjects:@"25.75",@"20.05136", @"28.9583", @"37.8514267", @"70.3372", @"32.385556", @"31.7416", @"33.7710", @"35.4560", @"36.2115", @"35.27005", @"35.4564", @"35.1301", @"28.1091", @"53.1", @"46.757222", @"46.475", @"54.710556", @"54.5", @"50.66017", @"53", @"53.362", @"53.633333", @"53.660278", @"53.454", @"56.4", @"56.278164", @"56.549197", @"56.982756", @"56.111389", @"-25", @"-20.798", @"-26.731389", @"30.516667", @"4.49278", @"5.093", @"33.89", @"26.431641", @"28.22", @"28.1",   nil];
+    
+    
+    NSArray *longArray = [[NSArray alloc] initWithObjects:@"71.38",@"-99.23831", @"48.0667", @"-95.7669288", @"-149.8504", @"-94.868611", @"-101.8744", @"-118.2247", @"-119.7246", @"-120.3578", @"-119.4259", @"-118.9834", @"-119.4608", @"-88.4944", @"-115.2", @"-48.780556", @"-48.479444", @"-115.413333", @"-119.383056", @"-2.03673", @"-1", @"0.233", @"0.616667", @"0.113889", @"-3.256", @"2.066667", @"3.395331", @"3.209986", @"2.958781", @"2.847222", @"132", @"115.406", @"141.005556", @"6.466667", @"-2.916667", @"-1.069", @"12.61", @"11.849474", @"19.13", @"20.1", nil];
+    
+    
+    NSArray *siteNames = [[NSArray alloc] initWithObjects:@"Aiswarya Oil Field", @"Cantarell Field", @"Burgan Field",@"Yates Center Oil Field",@"Kuparuk River Oil Field", @"East Texas Oil Field", @"Spraberry Trend", @"Wilmington Oil Field", @"South Belridge Oil Field", @"Coalinga Oil Field", @"Elk Hills Oil Field", @"Kern River Oil Field", @"Midway-Sunset Oil Field", @"Thunder Horse Oil Field", @"Pembina oil field", @"Hibernia oil field", @"Terra Nova oil field", @"Swan Hills, Alberta", @"Rainbow Lake, Alberta", @"Wytch Farm", @"East Midlands Oil Province", @"Theddlethorpe Gas Terminal", @"Amethyst gasfield", @"Rough Field", @"Douglas Complex", @"Auk oilfield", @"Valhall oil field", @"Ekofisk oil field", @"Tambar oil field", @"Ula oil field", @"Amadeus Basin", @"Barrow Island", @"Cooper Basin", @"Gassi Touil", @"Jubilee oil field", @"Saltpond Oil Field", @"Bouri Field", @"El Sharara oil field", @"Sarir field", @"Waha field", nil];
+    
+    
+    NSArray *continentsArray = [NSArray arrayWithObjects:@"Asia-Pacific", @"Asia-Pacific", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas", @"Americas",  @"Europe", @"Europe", @"Europe", @"Europe", @"Europe", @"Europe", @"Europe", @"Europe", @"Europe", @"Europe", @"Europe", @"Asia-Pacific", @"Asia-Pacific", @"Asia-Pacific", @"Africa", @"Africa", @"Africa", @"Africa", @"Africa", @"Africa", @"Africa",  nil];
+    
+    
+    NSArray *countryArray = [NSArray arrayWithObjects:@"India", @"Saudi Arabia", @"Kuwait", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"United States Of America", @"Canada", @"Canada", @"Canada", @"Canada", @"Canada", @"United Kingdom", @"United Kingdom", @"United Kingdom", @"United Kingdom", @"United Kingdom", @"United Kingdom", @"United Kingdom", @"Norway", @"Norway", @"Norway", @"Norway", @"Australia", @"Australia", @"Australia", @"Algeria", @"Ghana", @"Ghana", @"Libya", @"Libya", @"Libya", @"Libya", nil];
+    
+    NSArray *totalDepth = [NSArray arrayWithObjects:@"3500", @"4231", @"4290", @"1000", @"3250", @"7890", @"4560", @"1250", @"6545", @"3561", @"4,030", @"1300", @"2300", @"6400", @"6520", @"3420", @"4685", @"7123", @"1254", @"3257", @"4256", @"4985", @"3650", @"4239", @"1035", @"4597", @"6578", @"3651", @"3698", @"3654", @"4520", @"4780", @"5870", @"4530", @"7520", @"3650", @"4260", @"3510", @"4360", @"2400", nil];
+    
+    NSArray *depthCovered = [NSArray arrayWithObjects:@"2601", @"3520", @"1957", @"546", @"2300", @"6000", @"4230", @"620", @"3500", @"2500", @"1500", @"1000", @"1500", @"4600", @"5200", @"2300", @"2500", @"6000", @"800", @"2560", @"3540", @"3850", @"2800", @"2500", @"430", @"3600", @"4200", @"2700", @"1600", @"900", @"3120", @"2300", @"1500", @"2400", @"5400", @"2100", @"3000", @"1600", @"2400", @"1500", nil];
+    
+    NSArray *depthCoveredDays = [NSArray arrayWithObjects: @"198", @"250", @"138",@"176", @"168", @"198", @"175", @"256", @"237", @"168", @"143", @"157", @"200", @"325", @"140 ",  @"204", @"184", @"165", @"230", @"252",@"260", @"186", @"194", @"135", @"270", @"240", @"246", @"196", @"164", @"300", @"165", @"192", @"120",@"168", @"147", @"310", @"250",  @"210", @"135", @"183", nil];
+    
+    
+    NSArray *gasProduced = [NSArray arrayWithObjects:@"NA", @"", @"2041", @"", @"", @"", @"", @"2031", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
+    
+    NSArray *oilProduced = [NSArray arrayWithObjects:@"GOI", @" PEMEX", @"Kuwait Oil Company", @"Transcontinental Oil", @"ARCO", @"Columbus Marion", @"Seaboard Oil Company", @"Aera Energy LLC", @"Chevron Corp.", @"Occidental Petroleum", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
+    
+    NSArray *productionDaysArray = [NSArray arrayWithObjects:@"120", @"250", @"138", @"325", @"140 ", @"168", @"210", @"135", @"183", @"198", @"204", @"184", @"165", @"230", @"252", @"147", @"310", @"250", @"260", @"186", @"194", @"135", @"270", @"240", @"246", @"196", @"164", @"300", @"165", @"192", @"176", @"168", @"198", @"175", @"256", @"237", @"168", @"143", @"157", @"200", nil];
+    
+    NSArray *activityHours = [NSArray arrayWithObjects:@"256", @"153", @"230", @"452", @"962 ", @"152", @"637", @"1235", @"320", @"564", @"862", @"712", @"103", @"961", @"625", @"351", @"436", @"195", @"781", @"830", @"268", @"349", @"961", @"752", @"617", @"751", @"935", @"745", @"162", @"716", @"651", @"125", @"236", @"345", @"523", @"413", @"254", @"351", @"845", @"885", nil];
+    
+    
+    NSMutableArray *sitesListmut = [[NSMutableArray alloc] init];
+    
+    for (int i=0; i<[latArray count]; i++) {
+        OGSOilAndGasSites *site = [[OGSOilAndGasSites alloc] init];
+        site.latitude = [NSNumber numberWithDouble:[[latArray objectAtIndex:i] doubleValue]];
+        site.longitude = [NSNumber numberWithDouble:[[longArray objectAtIndex:i] doubleValue]];
+        site.address = [countryArray objectAtIndex:i];
+        site.name = [siteNames objectAtIndex:i];
+        site.continent = [continentsArray objectAtIndex:i];
+        //        site.abandonedYear = [abandonedArray objectAtIndex:i];
+        //        site.productionStartYear = [startOfProduction objectAtIndex:i];
+        //        site.discoveredYear = [discoveredArray objectAtIndex:i];
+        //        site.siteDeveloper = [developersArray objectAtIndex:i];
+        site.country = [countryArray objectAtIndex:i];
+        site.totalDepth = [NSNumber numberWithInt:[[totalDepth objectAtIndex:i] intValue]];
+        site.wellId = [NSString stringWithFormat:@"%d-%d",200,10100+i];
+        site.productionDays = [NSNumber numberWithInt:[[productionDaysArray objectAtIndex:i] intValue]];
+        site.oilProduced = [NSNumber numberWithInt:[[oilProduced objectAtIndex:i] intValue]];
+        site.gasProduced = [NSNumber numberWithInt:[[gasProduced objectAtIndex:i] intValue]];
+        site.depthCoveredDays = [NSNumber numberWithInt:[[depthCoveredDays objectAtIndex:i] intValue]];
+        site.depthCovered = [NSNumber numberWithInt:[[depthCovered objectAtIndex:i] intValue]];
+        site.activityHours = [NSNumber numberWithInt:[[activityHours objectAtIndex:i] intValue]];
+        [sitesListmut addObject:site];
+    }
+    [OGSBusinessClass sharedInstance].sitesList= [[NSArray alloc] initWithArray:sitesListmut];
+    [[NSUserDefaults standardUserDefaults] setObject:[OGSBusinessClass sharedInstance].sitesList forKey:@"sitesList"];
+}
+
+@end

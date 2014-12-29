@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MessageBox()
+comment1.params=text
+comment1.target=MessageBox(java.lang.String)
+comment2.params=text
+comment2.target=void\ setText(java.lang.String)
+comment3.params=text
+comment3.target=void\ updateImage(java.lang.String)
+comment4.params=actor
+comment4.target=void\ removeMsg(greenfoot.Actor)
+comment5.params=
+comment5.target=void\ act()
+numComments=6

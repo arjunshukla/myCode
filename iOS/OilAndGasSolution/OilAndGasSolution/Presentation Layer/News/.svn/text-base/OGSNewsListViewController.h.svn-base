@@ -1,0 +1,20 @@
+//
+//  OGSNewsListViewController.h
+//  OilAndGasSolution
+//
+//  Created by Sripad Mirajkar on 22/08/13.
+//  Copyright (c) 2013 Infosys Limited. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface OGSNewsListViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITableView *headlinesTableView;
+@property (strong, nonatomic) IBOutlet UITextView *newsTextView;
+@property (strong, nonatomic) IBOutlet UIView *shareView;
+@property (strong, nonatomic) NSNumber *selectedNewsId;
+- (IBAction)facebookShare:(id)sender;
+- (IBAction)twitterShare:(id)sender;
+- (IBAction)mailShare:(id)sender;
+
+@end

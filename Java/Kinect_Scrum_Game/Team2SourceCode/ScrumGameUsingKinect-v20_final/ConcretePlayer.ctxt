@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ConcretePlayer()
+comment1.params=theSubject\ piece\ turn\ day
+comment1.target=ConcretePlayer(ConcreteSubject,\ Pawn,\ boolean,\ Days)
+comment2.params=
+comment2.target=void\ update()
+comment3.params=
+comment3.target=int\ getPlayerCurrentPositionID()
+comment4.params=
+comment4.target=int\ getPlayerPreviousPositionID()
+comment5.params=
+comment5.target=int\ getNumberOfEODs()
+comment6.params=numberOfEODs
+comment6.target=void\ setNumberOfEODs(int)
+comment7.params=
+comment7.target=int\ getDiceCount()
+comment8.params=
+comment8.target=void\ updateAtributes()
+comment9.params=
+comment9.target=void\ updateConsumedDays()
+numComments=10

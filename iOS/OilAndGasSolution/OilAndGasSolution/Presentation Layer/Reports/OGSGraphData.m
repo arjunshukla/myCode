@@ -1,0 +1,106 @@
+//
+//  OGSGraphData.m
+//  OilAndGasSolution
+//
+//  Created by Arjun on 29/08/13.
+
+
+#import "OGSGraphData.h"
+#import "OGSGraphConstants.h"
+
+@implementation OGSGraphData
+
+
++ (OGSGraphData *)sharedInstance {
+    static OGSGraphData *sharedInstance;
+    
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
+- (NSArray *)tickerSymbols {
+    static NSArray *symbols = nil;
+    if (!symbols) {
+        symbols = [NSArray arrayWithObjects:
+                   @"AAPL",
+                   @"GOOG",
+                   @"MSFT",
+                   nil];
+    }
+    return symbols;
+}
+
+- (NSArray *)datesInWeek {
+    static NSArray *dates = nil;
+    if (!dates) {
+        dates = [NSArray arrayWithObjects:
+                 @"4/23",
+                 @"4/24",
+                 @"4/25",
+                 @"4/26",
+                 @"4/27",
+                 nil];
+    }
+    return dates;
+}
+
+- (NSArray *)weeklyPrices:(NSString *)tickerSymbol {
+    if ([CPDTickerSymbolAAPL isEqualToString:[tickerSymbol uppercaseString]] == YES) {
+        return [self weeklyAaplPrices];
+    }
+    else if ([CPDTickerSymbolGOOG isEqualToString:[tickerSymbol uppercaseString]] == YES) {
+        return [self weeklyGoogPrices];
+    }
+    else if ([CPDTickerSymbolMSFT isEqualToString:[tickerSymbol uppercaseString]] == YES) {
+        return [self weeklyMsftPrices];
+    }
+    return [NSArray array];
+}
+
+- (NSArray *)weeklyAaplPrices {
+    static NSArray *prices = nil;
+    if (!prices) {
+        prices = [NSArray arrayWithObjects:
+                  [NSDecimalNumber numberWithFloat:571.70],
+                  [NSDecimalNumber numberWithFloat:560.28],
+                  [NSDecimalNumber numberWithFloat:610.00],
+                  [NSDecimalNumber numberWithFloat:607.70],
+                  [NSDecimalNumber numberWithFloat:603.00],
+                  nil];
+    }
+    return prices;
+}
+
+- (NSArray *)weeklyGoogPrices {
+    static NSArray *prices = nil;
+    if (!prices) {
+        prices = [NSArray arrayWithObjects:
+                  [NSDecimalNumber numberWithFloat:597.60],
+                  [NSDecimalNumber numberWithFloat:601.27],
+                  [NSDecimalNumber numberWithFloat:609.72],
+                  [NSDecimalNumber numberWithFloat:615.47],
+                  [NSDecimalNumber numberWithFloat:614.98],
+                  nil];
+    }
+    return prices;
+}
+
+- (NSArray *)weeklyMsftPrices {
+    static NSArray *prices = nil;
+    if (!prices) {
+        prices = [NSArray arrayWithObjects:
+                  [NSDecimalNumber numberWithFloat:32.12],
+                  [NSDecimalNumber numberWithFloat:31.92],
+                  [NSDecimalNumber numberWithFloat:253.20],
+                  [NSDecimalNumber numberWithFloat:32.11],
+                  [NSDecimalNumber numberWithFloat:31.98],
+                  nil];
+    }
+    return prices;
+}
+
+@end

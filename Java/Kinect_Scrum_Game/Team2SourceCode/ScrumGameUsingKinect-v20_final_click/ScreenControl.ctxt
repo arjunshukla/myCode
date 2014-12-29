@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ScreenControl\ getInstance()
+comment1.params=screen
+comment1.target=void\ setScreen(Screen)
+numComments=2

@@ -1,0 +1,32 @@
+//
+//  OGSOilAndGasSites.m
+//  OilAndGasSolution
+//
+//  Created by Sripad Mirajkar on 26/08/13.
+//  Copyright (c) 2013 Infosys Limited. All rights reserved.
+//
+
+#import "OGSOilAndGasSites.h"
+
+@implementation OGSOilAndGasSites
+
+@synthesize longitude, latitude,address,name,phoneNumber,continent,country,numberOfBarrelsProduced,siteDeveloper,discoveredYear,productionStartYear,abandonedYear,wellId,totalDepth,depthCovered,depthCoveredDays,oilProduced,gasProduced,productionDays,activityHours;
+
+- (CLLocationCoordinate2D)coordinate
+{
+    coordinate.latitude = [self.latitude doubleValue];
+    coordinate.longitude = [self.longitude doubleValue];
+    return coordinate;
+}
+
+-(NSString *)title
+{
+    return name;
+}
+
+-(NSString *)subtitle
+{
+    return address;
+}
+
+@end

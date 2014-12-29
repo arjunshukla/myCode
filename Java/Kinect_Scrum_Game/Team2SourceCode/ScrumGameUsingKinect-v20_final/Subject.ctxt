@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=ply
+comment0.target=void\ attach(Observer)
+comment1.params=ply
+comment1.target=void\ detach(Observer)
+comment2.params=
+comment2.target=void\ notifyPlayers()
+numComments=3

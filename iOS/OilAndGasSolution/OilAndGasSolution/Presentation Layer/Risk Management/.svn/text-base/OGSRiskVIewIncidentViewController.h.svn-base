@@ -1,0 +1,17 @@
+//
+//  OGSRiskVIewIncidentViewController.h
+//  OilAndGasSolution
+//
+//  Created by Nithin_abraham on 29/08/13.
+//  Copyright (c) 2013 Infosys Limited. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface OGSRiskVIewIncidentViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UIView *viewIncidentsView;
+@property (strong, nonatomic) IBOutlet UITextView *newsTextView;
+
+@property (strong, nonatomic) IBOutlet UITableView *headlinesTableView;
+
+@end
