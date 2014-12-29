@@ -304,9 +304,9 @@
     
     
     NSMutableArray *sitesListmut = [[NSMutableArray alloc] init];
-    
+    OGSOilAndGasSites *site;
     for (int i=0; i<[latArray count]; i++) {
-        OGSOilAndGasSites *site = [[OGSOilAndGasSites alloc] init];
+        site = [[OGSOilAndGasSites alloc] init];
         site.latitude = [NSNumber numberWithDouble:[[latArray objectAtIndex:i] doubleValue]];
         site.longitude = [NSNumber numberWithDouble:[[longArray objectAtIndex:i] doubleValue]];
         site.address = [countryArray objectAtIndex:i];
@@ -328,7 +328,8 @@
         [sitesListmut addObject:site];
     }
     [OGSBusinessClass sharedInstance].sitesList= [[NSArray alloc] initWithArray:sitesListmut];
-    [[NSUserDefaults standardUserDefaults] setObject:[OGSBusinessClass sharedInstance].sitesList forKey:@"sitesList"];
+    //[[NSUserDefaults standardUserDefaults] setObject:[[OGSBusinessClass sharedInstance].sitesList valueForKey:@"sitesList"] forKey:@"sitesList"];
+    //[[NSUserDefaults standardUserDefaults] setObject:[OGSBusinessClass sharedInstance].sitesList forKey:@"sitesList"];
 }
 
 @end

@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC02520A178585E1006000AE /* BlockerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC025209178585E1006000AE /* BlockerModel.m */; };
+		DC02521617859FAD006000AE /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = DC02521517859FAD006000AE /* paddle.png */; };
+		DC846FE217856BFE004511FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC846FE117856BFE004511FC /* UIKit.framework */; };
+		DC846FE417856BFE004511FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC846FE317856BFE004511FC /* Foundation.framework */; };
+		DC846FE617856BFE004511FC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC846FE517856BFE004511FC /* CoreGraphics.framework */; };
+		DC846FEC17856BFE004511FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC846FEA17856BFE004511FC /* InfoPlist.strings */; };
+		DC846FEE17856BFE004511FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC846FED17856BFE004511FC /* main.m */; };
+		DC846FF217856BFE004511FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC846FF117856BFE004511FC /* AppDelegate.m */; };
+		DC846FF417856BFE004511FC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DC846FF317856BFE004511FC /* Default.png */; };
+		DC846FF617856BFE004511FC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC846FF517856BFE004511FC /* Default@2x.png */; };
+		DC846FF817856BFE004511FC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC846FF717856BFE004511FC /* Default-568h@2x.png */; };
+		DC846FFB17856BFF004511FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC846FFA17856BFF004511FC /* ViewController.m */; };
+		DC846FFE17856BFF004511FC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC846FFC17856BFF004511FC /* ViewController.xib */; };
+		DC84700617856C41004511FC /* BlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC84700517856C41004511FC /* BlockView.m */; };
+		DCB0EBD7178AC4550093E08F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB0EBD6178AC4550093E08F /* QuartzCore.framework */; };
+		F20A23881A51DDC1004A0C57 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = F20A23871A51DDC1004A0C57 /* ball.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC025208178585E1006000AE /* BlockerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockerModel.h; sourceTree = "<group>"; };
+		DC025209178585E1006000AE /* BlockerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockerModel.m; sourceTree = "<group>"; };
+		DC02521517859FAD006000AE /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
+		DC846FDE17856BFE004511FC /* Block Blaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Block Blaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC846FE117856BFE004511FC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC846FE317856BFE004511FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC846FE517856BFE004511FC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC846FE917856BFE004511FC /* Block Blaster-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Block Blaster-Info.plist"; sourceTree = "<group>"; };
+		DC846FEB17856BFE004511FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC846FED17856BFE004511FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC846FEF17856BFE004511FC /* Block Blaster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Block Blaster-Prefix.pch"; sourceTree = "<group>"; };
+		DC846FF017856BFE004511FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC846FF117856BFE004511FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC846FF317856BFE004511FC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DC846FF517856BFE004511FC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DC846FF717856BFE004511FC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DC846FF917856BFE004511FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DC846FFA17856BFF004511FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DC846FFD17856BFF004511FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		DC84700417856C41004511FC /* BlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockView.h; sourceTree = "<group>"; };
+		DC84700517856C41004511FC /* BlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockView.m; sourceTree = "<group>"; };
+		DCB0EBD6178AC4550093E08F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F20A23871A51DDC1004A0C57 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC846FDB17856BFE004511FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB0EBD7178AC4550093E08F /* QuartzCore.framework in Frameworks */,
+				DC846FE217856BFE004511FC /* UIKit.framework in Frameworks */,
+				DC846FE417856BFE004511FC /* Foundation.framework in Frameworks */,
+				DC846FE617856BFE004511FC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC025207178585AD006000AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC025208178585E1006000AE /* BlockerModel.h */,
+				DC025209178585E1006000AE /* BlockerModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DC02520B1785965A006000AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC846FF017856BFE004511FC /* AppDelegate.h */,
+				DC846FF117856BFE004511FC /* AppDelegate.m */,
+				DC846FF917856BFE004511FC /* ViewController.h */,
+				DC846FFA17856BFF004511FC /* ViewController.m */,
+				DC846FFC17856BFF004511FC /* ViewController.xib */,
+				DC84700417856C41004511FC /* BlockView.h */,
+				DC84700517856C41004511FC /* BlockView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DC02520C17859BFE006000AE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F20A23871A51DDC1004A0C57 /* ball.png */,
+				DC02521517859FAD006000AE /* paddle.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		DC846FD517856BFE004511FC = {
+			isa = PBXGroup;
+			children = (
+				DC846FE717856BFE004511FC /* Block Blaster */,
+				DC846FE017856BFE004511FC /* Frameworks */,
+				DC846FDF17856BFE004511FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC846FDF17856BFE004511FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC846FDE17856BFE004511FC /* Block Blaster.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC846FE017856BFE004511FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCB0EBD6178AC4550093E08F /* QuartzCore.framework */,
+				DC846FE117856BFE004511FC /* UIKit.framework */,
+				DC846FE317856BFE004511FC /* Foundation.framework */,
+				DC846FE517856BFE004511FC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC846FE717856BFE004511FC /* Block Blaster */ = {
+			isa = PBXGroup;
+			children = (
+				DC02520C17859BFE006000AE /* images */,
+				DC025207178585AD006000AE /* Model */,
+				DC02520B1785965A006000AE /* View */,
+				DC846FE817856BFE004511FC /* Supporting Files */,
+			);
+			path = "Block Blaster";
+			sourceTree = "<group>";
+		};
+		DC846FE817856BFE004511FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC846FE917856BFE004511FC /* Block Blaster-Info.plist */,
+				DC846FEA17856BFE004511FC /* InfoPlist.strings */,
+				DC846FED17856BFE004511FC /* main.m */,
+				DC846FEF17856BFE004511FC /* Block Blaster-Prefix.pch */,
+				DC846FF317856BFE004511FC /* Default.png */,
+				DC846FF517856BFE004511FC /* Default@2x.png */,
+				DC846FF717856BFE004511FC /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC846FDD17856BFE004511FC /* Block Blaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC84700117856BFF004511FC /* Build configuration list for PBXNativeTarget "Block Blaster" */;
+			buildPhases = (
+				DC846FDA17856BFE004511FC /* Sources */,
+				DC846FDB17856BFE004511FC /* Frameworks */,
+				DC846FDC17856BFE004511FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Block Blaster";
+			productName = "Block Blaster";
+			productReference = DC846FDE17856BFE004511FC /* Block Blaster.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC846FD617856BFE004511FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Arjun;
+			};
+			buildConfigurationList = DC846FD917856BFE004511FC /* Build configuration list for PBXProject "Block Blaster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC846FD517856BFE004511FC;
+			productRefGroup = DC846FDF17856BFE004511FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC846FDD17856BFE004511FC /* Block Blaster */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC846FDC17856BFE004511FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC846FEC17856BFE004511FC /* InfoPlist.strings in Resources */,
+				DC846FF417856BFE004511FC /* Default.png in Resources */,
+				DC846FF617856BFE004511FC /* Default@2x.png in Resources */,
+				DC846FF817856BFE004511FC /* Default-568h@2x.png in Resources */,
+				DC846FFE17856BFF004511FC /* ViewController.xib in Resources */,
+				DC02521617859FAD006000AE /* paddle.png in Resources */,
+				F20A23881A51DDC1004A0C57 /* ball.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC846FDA17856BFE004511FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC846FEE17856BFE004511FC /* main.m in Sources */,
+				DC846FF217856BFE004511FC /* AppDelegate.m in Sources */,
+				DC846FFB17856BFF004511FC /* ViewController.m in Sources */,
+				DC84700617856C41004511FC /* BlockView.m in Sources */,
+				DC02520A178585E1006000AE /* BlockerModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC846FEA17856BFE004511FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC846FEB17856BFE004511FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC846FFC17856BFF004511FC /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC846FFD17856BFF004511FC /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC846FFF17856BFF004511FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DC84700017856BFF004511FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC84700217856BFF004511FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Block Blaster/Block Blaster-Prefix.pch";
+				INFOPLIST_FILE = "Block Blaster/Block Blaster-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC84700317856BFF004511FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arjun Shukla (5CS85D6BL8)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Block Blaster/Block Blaster-Prefix.pch";
+				INFOPLIST_FILE = "Block Blaster/Block Blaster-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EC41D3E-80C6-40B0-A25C-95BF0F3FFFBE";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC846FD917856BFE004511FC /* Build configuration list for PBXProject "Block Blaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC846FFF17856BFF004511FC /* Debug */,
+				DC84700017856BFF004511FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC84700117856BFF004511FC /* Build configuration list for PBXNativeTarget "Block Blaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC84700217856BFF004511FC /* Debug */,
+				DC84700317856BFF004511FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC846FD617856BFE004511FC /* Project object */;
+}
